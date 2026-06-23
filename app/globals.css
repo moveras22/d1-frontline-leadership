@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+:root {
+  --navy-950: #050d1a;
+  --navy-900: #0a1628;
+  --navy-800: #0f1f35;
+  --navy-700: #152842;
+  --gold-400: #d4af37;
+  --gold-500: #c9a227;
+  --gold-600: #b8922a;
+  --white: #ffffff;
+  --muted: #94a3b8;
+  --border: rgba(212, 175, 55, 0.15);
+}
+
+@theme inline {
+  --color-navy-950: var(--navy-950);
+  --color-navy-900: var(--navy-900);
+  --color-navy-800: var(--navy-800);
+  --color-navy-700: var(--navy-700);
+  --color-gold-400: var(--gold-400);
+  --color-gold-500: var(--gold-500);
+  --color-gold-600: var(--gold-600);
+  --color-muted: var(--muted);
+  --font-sans: var(--font-inter);
+  --font-family-display: var(--font-playfair);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--navy-950);
+  color: var(--white);
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+::selection {
+  background: rgba(212, 175, 55, 0.35);
+  color: var(--white);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #f5e6a8 0%, #d4af37 45%, #b8922a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(212, 175, 55, 0.35),
+    transparent
+  );
+}
+
+.industrial-grid {
+  background-image:
+    linear-gradient(rgba(212, 175, 55, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 175, 55, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.image-placeholder {
+  background:
+    linear-gradient(135deg, rgba(15, 31, 53, 0.9), rgba(5, 13, 26, 0.95)),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(212, 175, 55, 0.03),
+      rgba(212, 175, 55, 0.03) 10px,
+      transparent 10px,
+      transparent 20px
+    );
+}
