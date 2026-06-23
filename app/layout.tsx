@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Inter, Playfair_Display } from "next/font/google";
 import Analytics from "./components/Analytics";
+import Header from "./components/Header";
 import "./globals.css";
 
 const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "G-BGBV611ZVP";
@@ -34,6 +35,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-navy-950 text-white">
         <Analytics />
+        <Header />
         {children}
       </body>
       <GoogleAnalytics gaId={gaId} />
