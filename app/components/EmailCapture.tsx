@@ -8,7 +8,25 @@ type FormErrors = {
   email?: string;
 };
 
-export default function EmailCapture() {
+type EmailCaptureProps = {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  submitLabel?: string;
+  submittingLabel?: string;
+  submittedMessage?: string;
+  submitTrackId?: string;
+};
+
+export default function EmailCapture({
+  eyebrow = "Get Started",
+  title = "Join Early Access",
+  description = "Be the first to access the D1 Assessment, workshop invitations, and leadership resources designed for manufacturing teams.",
+  submitLabel = "Join Early Access",
+  submittingLabel = "Joining...",
+  submittedMessage = "You're on the list. We'll send your D1 Leadership Assessment and upcoming workshop invitations.",
+  submitTrackId = "early_access_submit",
+}: EmailCaptureProps) {
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitError, setSubmitError] = useState("");
@@ -88,15 +106,12 @@ export default function EmailCapture() {
       <div className="mx-auto max-w-7xl px-6 pt-24 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gold-400">
-            Get Started
+            {eyebrow}
           </p>
           <h2 className="mt-4 font-display text-3xl font-bold sm:text-4xl">
-            Join Early Access
+            {title}
           </h2>
-          <p className="mt-4 text-lg text-white/60">
-            Be the first to access the D1 Assessment, workshop invitations, and
-            leadership resources designed for manufacturing teams.
-          </p>
+          <p className="mt-4 text-lg text-white/60">{description}</p>
         </div>
 
         <div className="mx-auto mt-12 max-w-xl">
@@ -118,8 +133,7 @@ export default function EmailCapture() {
                 </svg>
               </div>
               <p className="font-display text-xl font-semibold leading-relaxed text-white/90">
-                You&apos;re on the list. We&apos;ll send your D1 Leadership
-                Assessment and upcoming workshop invitations.
+                {submittedMessage}
               </p>
             </div>
           ) : (
@@ -239,11 +253,11 @@ export default function EmailCapture() {
               )}
               <button
                 type="submit"
-                data-track="early_access_submit"
+                data-track={submitTrackId}
                 disabled={isSubmitting}
                 className="mt-8 w-full rounded-sm bg-gold-500 py-4 text-sm font-semibold uppercase tracking-wider text-navy-950 transition-all hover:bg-gold-400 hover:shadow-[0_0_30px_rgba(212,175,55,0.2)] disabled:cursor-not-allowed disabled:opacity-60"
               >
-                {isSubmitting ? "Joining..." : "Join Early Access"}
+                {isSubmitting ? submittingLabel : submitLabel}
               </button>
               <p className="mt-4 text-center text-xs text-white/35">
                 No spam. Unsubscribe anytime.
