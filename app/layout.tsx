@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Inter, Playfair_Display } from "next/font/google";
 import Analytics from "./components/Analytics";
 import "./globals.css";
+
+const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "G-BGBV611ZVP";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -33,6 +36,7 @@ export default function RootLayout({
         <Analytics />
         {children}
       </body>
+      <GoogleAnalytics gaId={gaId} />
     </html>
   );
 }
