@@ -48,6 +48,7 @@ const pillars: Pillar[] = [
     title: "Team Impact",
     description:
       "The ability to elevate crew performance, trust, and engagement—not just individual output.",
+    href: "/pillars/team-impact",
   },
 ];
 
