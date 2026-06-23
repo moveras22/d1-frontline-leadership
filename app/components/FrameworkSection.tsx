@@ -33,6 +33,7 @@ const pillars: Pillar[] = [
     title: "Accountability",
     description:
       "Ownership of outcomes, direct conversations, and follow-through without excuses.",
+    href: "/pillars/accountability",
   },
   {
     letter: "D",
