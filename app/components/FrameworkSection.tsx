@@ -41,6 +41,7 @@ const pillars: Pillar[] = [
     title: "Pressure Response",
     description:
       "Composure and clear decision-making when production demands peak and problems stack up.",
+    href: "/pillars/pressure-response",
   },
   {
     letter: "1",
