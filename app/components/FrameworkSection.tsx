@@ -27,6 +27,7 @@ const pillars: Pillar[] = [
     title: "Competitive Drive",
     description:
       "An internal standard of excellence that pushes teams to outperform—not just comply.",
+    href: "/pillars/competitive-drive",
   },
   {
     letter: "1",
