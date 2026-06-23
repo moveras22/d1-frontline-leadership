@@ -52,6 +52,15 @@ const pillars: Pillar[] = [
   },
 ];
 
+const pillarOverviewItems = [
+  "Coachability",
+  "Discipline",
+  "Accountability",
+  "Competitive Drive",
+  "Pressure Response",
+  "Team Impact",
+];
+
 export default function FrameworkSection() {
   return (
     <section id="framework" className="relative py-24 lg:py-32">
@@ -71,11 +80,44 @@ export default function FrameworkSection() {
               D1 Framework gives you a common language to assess, develop, and
               coach supervisors with precision.
             </p>
-            <div className="image-placeholder mt-10 hidden aspect-video overflow-hidden rounded-sm border border-white/10 lg:block">
-              <div className="flex h-full items-center justify-center">
-                <p className="text-xs uppercase tracking-[0.2em] text-white/30">
-                  Leadership coaching on the plant floor
+            <div className="image-placeholder mt-10 aspect-video overflow-hidden rounded-sm border border-white/10">
+              <div className="flex h-full flex-col justify-center overflow-y-auto px-6 py-8 sm:px-8 lg:px-10">
+                <h3 className="font-display text-xl font-bold text-white sm:text-2xl">
+                  The D1 Leadership Pillars
+                </h3>
+                <p className="mt-4 text-sm leading-relaxed text-white/65 sm:text-base">
+                  Great frontline leaders are not defined by experience alone.
+                  The D1 Framework evaluates the traits that predict leadership
+                  success before someone is hired or promoted.
                 </p>
+                <p className="mt-4 text-sm leading-relaxed text-white/65 sm:text-base">
+                  These six pillars form the foundation of the D1 Leadership
+                  Framework:
+                </p>
+                <ul className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-x-6">
+                  {pillarOverviewItems.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-center gap-2 text-sm text-white/75"
+                    >
+                      <span className="text-gold-400" aria-hidden="true">
+                        ✓
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-4 text-sm leading-relaxed text-white/55">
+                  Click any pillar to learn how to identify, evaluate, and
+                  develop that trait in future leaders.
+                </p>
+                <Link
+                  href="/free-framework"
+                  data-track="framework_overview_cta"
+                  className="mt-6 inline-flex w-fit items-center justify-center rounded-sm bg-gold-500 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-navy-950 transition-all hover:bg-gold-400 hover:shadow-[0_0_30px_rgba(212,175,55,0.25)] sm:text-sm"
+                >
+                  Get the Free Framework
+                </Link>
               </div>
             </div>
           </div>
