@@ -1,5 +1,4 @@
 import Link from "next/link";
-import type { ReactNode } from "react";
 
 type Pillar = {
   letter: string;
@@ -14,6 +13,7 @@ const pillars: Pillar[] = [
     title: "Discipline",
     description:
       "Consistent habits, routines, and standards that hold under pressure on every shift.",
+    href: "/pillars/discipline",
   },
   {
     letter: "1",
@@ -107,7 +107,7 @@ export default function FrameworkSection() {
                   <Link
                     key={pillar.title}
                     href={pillar.href}
-                    data-track="pillar_coachability_card"
+                    data-track={`pillar_${pillar.title.toLowerCase().replace(/\s+/g, "_")}_card`}
                     className={cardClassName}
                   >
                     {cardContent}
