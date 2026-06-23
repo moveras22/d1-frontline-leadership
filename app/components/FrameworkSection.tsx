@@ -1,4 +1,14 @@
-const pillars = [
+import Link from "next/link";
+import type { ReactNode } from "react";
+
+type Pillar = {
+  letter: string;
+  title: string;
+  description: string;
+  href?: string;
+};
+
+const pillars: Pillar[] = [
   {
     letter: "D",
     title: "Discipline",
@@ -10,6 +20,7 @@ const pillars = [
     title: "Coachability",
     description:
       "Openness to feedback, rapid learning, and the humility to grow beyond current capability.",
+    href: "/pillars/coachability",
   },
   {
     letter: "D",
@@ -66,25 +77,50 @@ export default function FrameworkSection() {
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
-            {pillars.map((pillar, index) => (
-              <div
-                key={pillar.title}
-                className="group relative overflow-hidden rounded-sm border border-white/8 bg-navy-800/50 p-6 transition-all hover:border-gold-500/30 hover:bg-navy-800/80"
-              >
-                <span className="absolute -right-2 -top-4 font-display text-7xl font-bold text-gold-500/5 transition-colors group-hover:text-gold-500/10">
-                  {pillar.letter}
-                </span>
-                <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-gold-500/10 text-xs font-bold text-gold-400">
-                  {index + 1}
-                </span>
-                <h3 className="mt-3 font-display text-lg font-semibold">
-                  {pillar.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-white/55">
-                  {pillar.description}
-                </p>
-              </div>
-            ))}
+            {pillars.map((pillar, index) => {
+              const cardClassName =
+                "group relative overflow-hidden rounded-sm border border-white/8 bg-navy-800/50 p-6 transition-all hover:border-gold-500/30 hover:bg-navy-800/80";
+              const cardContent = (
+                <>
+                  <span className="absolute -right-2 -top-4 font-display text-7xl font-bold text-gold-500/5 transition-colors group-hover:text-gold-500/10">
+                    {pillar.letter}
+                  </span>
+                  <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-gold-500/10 text-xs font-bold text-gold-400">
+                    {index + 1}
+                  </span>
+                  <h3 className="mt-3 font-display text-lg font-semibold">
+                    {pillar.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-white/55">
+                    {pillar.description}
+                  </p>
+                  {pillar.href && (
+                    <p className="mt-4 text-xs font-semibold uppercase tracking-wider text-gold-400 transition-colors group-hover:text-gold-300">
+                      Learn more →
+                    </p>
+                  )}
+                </>
+              );
+
+              if (pillar.href) {
+                return (
+                  <Link
+                    key={pillar.title}
+                    href={pillar.href}
+                    data-track="pillar_coachability_card"
+                    className={cardClassName}
+                  >
+                    {cardContent}
+                  </Link>
+                );
+              }
+
+              return (
+                <div key={pillar.title} className={cardClassName}>
+                  {cardContent}
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
