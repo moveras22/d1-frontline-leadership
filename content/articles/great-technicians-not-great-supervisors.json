@@ -70,5 +70,27 @@
         "Some technicians do make excellent supervisors — but only when they are selected for leadership traits, not just technical skill, and supported through a deliberate transition. Provide structured leadership development, clear expectations about their new role, and coaching that helps them shift from doing the work to leading the people who do the work."
       ]
     }
+  ],
+  "faqs": [
+    {
+      "question": "Why do top technicians often struggle after becoming supervisors?",
+      "answer": "Technicians are rewarded for individual performance. Supervisors must shift to developing others, delegating work, and managing conflict — a fundamentally different skill set that technical excellence does not guarantee."
+    },
+    {
+      "question": "Should I ever promote my best operator to supervisor?",
+      "answer": "Only if they demonstrate leadership behaviors beyond technical skill — such as mentoring peers, staying calm under pressure, and taking ownership of team outcomes. Production numbers alone are not enough."
+    },
+    {
+      "question": "What signs suggest a technician is ready for a supervisory role?",
+      "answer": "Look for influence without authority: peers seek them out for help, they communicate clearly under stress, and they celebrate team wins over personal achievements."
+    },
+    {
+      "question": "How can I support a technician transitioning to supervisor?",
+      "answer": "Set clear expectations about the new role, provide structured leadership coaching, and help them stop doing the work themselves. The shift from operator to leader takes deliberate development."
+    },
+    {
+      "question": "Is it better to hire supervisors externally or promote from within?",
+      "answer": "Both can work, but internal promotions succeed when candidates are evaluated on leadership traits — not just tenure. External hires bring fresh perspective but need time to earn floor credibility."
+    }
   ]
 }

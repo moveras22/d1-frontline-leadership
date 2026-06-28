@@ -18,6 +18,11 @@ export type ArticleSection = {
   quote?: string;
 };
 
+export type ArticleFaq = {
+  question: string;
+  answer: string;
+};
+
 export type Article = {
   slug: string;
   title: string;
@@ -33,6 +38,7 @@ export type Article = {
     description: string;
   };
   sections: ArticleSection[];
+  faqs: ArticleFaq[];
 };
 
 export function getCategoryLabel(slug: ArticleCategorySlug): string {

@@ -66,5 +66,27 @@
         "Remember: your team is always watching how you hold yourself accountable. Model the behavior you expect, admit your own mistakes quickly, and follow through on your commitments. That is the foundation everything else is built on."
       ]
     }
+  ],
+  "faqs": [
+    {
+      "question": "What is the difference between accountability and micromanagement?",
+      "answer": "Accountability means clear expectations and consistent follow-through. Micromanagement is excessive oversight that removes ownership from the team. Strong leaders set standards, then trust people to meet them."
+    },
+    {
+      "question": "How do I hold my team accountable without damaging morale?",
+      "answer": "Be consistent, fair, and prompt. Address issues privately when possible, recognize good performance publicly, and explain the 'why' behind standards so accountability feels like shared pride — not punishment."
+    },
+    {
+      "question": "What should I do when a team member repeatedly misses standards?",
+      "answer": "Confirm they understand the expectation, document the pattern, and have a direct conversation about the gap. Consistent consequences — applied fairly — protect the team and the standard."
+    },
+    {
+      "question": "How can I build a team that holds itself accountable?",
+      "answer": "Involve the team in setting standards, share performance data openly, and recognize when peers self-correct. When accountability becomes a team norm, you spend less time policing and more time leading."
+    },
+    {
+      "question": "How long does it take to shift an accountability culture on the floor?",
+      "answer": "Start with one priority area and follow through consistently for two to four weeks. Small, visible wins build credibility. Cultural change takes months, but consistency in the first few weeks sets the tone."
+    }
   ]
 }

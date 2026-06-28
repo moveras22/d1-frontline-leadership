@@ -77,5 +77,31 @@
       ],
       "quote": "The quality of a candidate's examples tells you more about their leadership ability than any credential on their resume."
     }
+  ],
+  "faqs": [
+    {
+      "question": "How many interview questions should I ask to assess leadership?",
+      "answer": "Focus on five to eight behavioral questions that map to specific leadership traits. Depth matters more than volume — follow up on each answer to uncover the candidate's actual role and results."
+    },
+    {
+      "question": "What makes a strong answer to a behavioral leadership question?",
+      "answer": "Strong answers include a specific situation, the candidate's personal actions, and a measurable outcome. Vague or hypothetical responses are a sign they may lack real leadership experience."
+    },
+    {
+      "question": "Should I use the same questions for internal promotions and external hires?",
+      "answer": "Use the same core behavioral questions for both, but adjust follow-ups. Internal candidates should have floor-specific examples; external candidates need evidence from prior roles that transfer to manufacturing."
+    },
+    {
+      "question": "How do I avoid leading the candidate toward the 'right' answer?",
+      "answer": "Ask open-ended questions, then pause. Use neutral follow-ups like 'What was your specific role?' and 'What happened next?' instead of hinting at the behavior you want to hear."
+    },
+    {
+      "question": "Which D1 traits are hardest to assess in an interview?",
+      "answer": "Pressure Response and Team Impact are often hardest because candidates can rehearse interview answers. Reference checks and observed floor behavior during trial periods provide stronger signals for these traits."
+    },
+    {
+      "question": "Can these questions work for hourly frontline roles?",
+      "answer": "Yes. These questions are designed for frontline and manufacturing environments. Adapt the examples to your operation, but keep the focus on past behavior rather than hypothetical scenarios."
+    }
   ]
 }

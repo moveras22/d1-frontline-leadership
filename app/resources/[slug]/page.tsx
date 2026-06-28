@@ -10,6 +10,8 @@ import ArticleShareButtons from "../../components/resources/ArticleShareButtons"
 import ArticleStructuredData from "../../components/resources/ArticleStructuredData";
 import ArticleTableOfContents from "../../components/resources/ArticleTableOfContents";
 import ArticleFeaturedImage from "../../components/resources/ArticleFeaturedImage";
+import ArticleFAQ from "../../components/resources/ArticleFAQ";
+import ArticleFaqStructuredData from "../../components/resources/ArticleFaqStructuredData";
 import {
   getAdjacentArticles,
   getAllArticleSlugs,
@@ -66,6 +68,7 @@ export default async function ArticlePage({ params }: PageProps) {
   return (
     <>
       <ArticleStructuredData article={article} />
+      <ArticleFaqStructuredData faqs={article.faqs} />
       <main>
         <section className="relative overflow-hidden pt-28 pb-12 lg:pt-36 lg:pb-16">
           <div className="industrial-grid absolute inset-0 opacity-40" />
@@ -142,6 +145,10 @@ export default async function ArticlePage({ params }: PageProps) {
 
           <div className="mt-16">
             <ArticleRelated articles={related} />
+          </div>
+
+          <div className="mt-16">
+            <ArticleFAQ faqs={article.faqs} />
           </div>
         </div>
       </main>

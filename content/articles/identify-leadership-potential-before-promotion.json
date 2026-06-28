@@ -65,5 +65,27 @@
         "Stop promoting based on tenure or technical skill alone. Build a consistent evaluation process that assesses leadership behaviors before making promotion decisions. Your next great supervisor is likely already on your floor — you just need the right lens to identify them."
       ]
     }
+  ],
+  "faqs": [
+    {
+      "question": "How early should I start evaluating someone for leadership potential?",
+      "answer": "Start observing leadership behaviors as soon as someone joins your team. You do not need a formal promotion opening — watch how they handle pressure, support peers, and follow through on commitments during normal operations."
+    },
+    {
+      "question": "Is technical performance a reliable indicator of leadership ability?",
+      "answer": "Not on its own. Strong technicians excel at individual work, but supervisors succeed through others. Evaluate influence, communication, and how they develop teammates — not just production numbers."
+    },
+    {
+      "question": "What is the biggest mistake organizations make when promoting frontline leaders?",
+      "answer": "Promoting based on tenure or technical skill without assessing leadership traits. This removes your best operator and creates a supervisor who may never develop the people skills the role requires."
+    },
+    {
+      "question": "Can leadership potential be developed, or is it fixed?",
+      "answer": "Many leadership traits can be developed with structured coaching and clear expectations. However, identifying baseline potential before promotion helps you invest in the right people and set them up for success."
+    },
+    {
+      "question": "How does the D1 Framework help with promotion decisions?",
+      "answer": "D1 gives you six defined pillars — Discipline, Competitive Drive, Coachability, Pressure Response, Accountability, and Team Impact — so promotion decisions are based on observable behaviors instead of gut feel."
+    }
   ]
 }

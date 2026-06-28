@@ -75,5 +75,27 @@
       ],
       "quote": "Manufacturing does not reward leadership theory. It rewards leaders who show up, follow through, and make their teams better every single shift."
     }
+  ],
+  "faqs": [
+    {
+      "question": "What is the most important leadership lesson from the production floor?",
+      "answer": "Consistency. Teams trust supervisors who show up the same way every day — same standards, same fairness, same communication. Predictability builds credibility faster than motivational speeches."
+    },
+    {
+      "question": "How should a new supervisor communicate during a breakdown or crisis?",
+      "answer": "Increase communication, not reduce it. State the situation clearly, assign specific roles, and provide regular updates even when nothing has changed. Silence creates anxiety and rumors."
+    },
+    {
+      "question": "Do frontline leaders need to know every job on the floor?",
+      "answer": "You do not need to be the best at every task, but you must respect the work and understand the basics. Credibility comes from learning the operation, not from pretending to know everything."
+    },
+    {
+      "question": "How do I balance production targets with team health?",
+      "answer": "Track leading indicators — safety, turnover, training completion, and engagement — alongside output metrics. A team pushed to 110% today often performs at 70% tomorrow."
+    },
+    {
+      "question": "When should I start developing my replacement on the floor?",
+      "answer": "Now. Cross-train deliberately, delegate stretch assignments, and document key processes before you need a backup. Depth on the floor prevents scrambling when someone leaves or gets promoted."
+    }
   ]
 }
