@@ -20,7 +20,7 @@ const whileYoureHereCards = [
     title: "Read the latest leadership articles",
     description:
       "Explore practical insights on identifying, hiring, and developing frontline leaders.",
-    href: "/pillars/discipline",
+    href: "/resources",
   },
   {
     title: "Explore the D1 Leadership Pillars",

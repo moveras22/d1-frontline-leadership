@@ -6,6 +6,7 @@ import { useState } from "react";
 
 const navLinks = [
   { label: "Home", href: "/" },
+  { label: "Leadership Resources", href: "/resources" },
   { label: "Free Framework", href: "/free-framework" },
 ];
 
@@ -21,7 +22,8 @@ function NavLink({
   className?: string;
 }) {
   const pathname = usePathname();
-  const isActive = pathname === href;
+  const isActive =
+    pathname === href || (href !== "/" && pathname.startsWith(`${href}/`));
 
   return (
     <Link

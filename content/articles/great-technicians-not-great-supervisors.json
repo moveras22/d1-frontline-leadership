@@ -1,0 +1,73 @@
+{
+  "slug": "great-technicians-not-great-supervisors",
+  "title": "Why Great Technicians Don't Always Become Great Supervisors",
+  "category": "manufacturing-leadership",
+  "excerpt": "Your best operator is not automatically your best supervisor. Understanding why technical excellence and leadership success require different skill sets can save your team years of frustration.",
+  "readingTimeMinutes": 7,
+  "publishedAt": "2026-01-28",
+  "author": "D1 Frontline Leadership",
+  "featuredImageAlt": "Transition from technician to supervisor in manufacturing",
+  "seo": {
+    "title": "Why Great Technicians Don't Always Become Great Supervisors | D1 Frontline Leadership",
+    "description": "Explore why top-performing technicians often struggle as supervisors and learn how to identify candidates with true frontline leadership potential in manufacturing."
+  },
+  "sections": [
+    {
+      "id": "the-expertise-trap",
+      "heading": "The Expertise Trap",
+      "level": 2,
+      "paragraphs": [
+        "Manufacturing organizations have a deeply ingrained habit: when a supervisor role opens, they look at the production metrics and promote the person with the highest output, the fewest defects, or the deepest technical knowledge.",
+        "This logic feels sound. Who better to lead the team than the person who knows the work best? The problem is that technical mastery and leadership ability are fundamentally different competencies."
+      ]
+    },
+    {
+      "id": "different-skills-different-success",
+      "heading": "Different Skills, Different Success Factors",
+      "level": 2,
+      "paragraphs": [
+        "A great technician succeeds through individual performance — speed, precision, problem-solving, and deep process knowledge. A great supervisor succeeds through others — communication, delegation, motivation, conflict resolution, and strategic thinking.",
+        "When organizations fail to distinguish between these skill sets, they create supervisors who micromanage because they cannot let go of the work, frustrate teams by doing everything themselves, and burn out trying to be both the best operator and the team leader."
+      ],
+      "list": [
+        "Technicians optimize individual output; supervisors optimize team output",
+        "Technicians solve problems directly; supervisors develop others to solve problems",
+        "Technicians value technical accuracy; supervisors balance accuracy with people development",
+        "Technicians compete individually; supervisors create competitive team cultures"
+      ]
+    },
+    {
+      "id": "warning-signs",
+      "heading": "Warning Signs Before You Promote",
+      "level": 2,
+      "paragraphs": [
+        "Before promoting your top technician, look for leadership behaviors that may — or may not — be present. Technical excellence without these indicators often leads to supervisory failure."
+      ],
+      "list": [
+        "They struggle to explain their process to others in simple terms",
+        "They become frustrated when teammates work at a different pace",
+        "They prefer working alone and resist collaborative problem-solving",
+        "They have never voluntarily mentored or trained a newer team member",
+        "They define success by personal metrics rather than team outcomes"
+      ]
+    },
+    {
+      "id": "finding-the-right-candidates",
+      "heading": "Finding the Right Leadership Candidates",
+      "level": 2,
+      "paragraphs": [
+        "The best frontline supervisor candidates are often not the highest-performing technicians. They are the people who already influence the team — the ones others go to for help, the ones who stay calm during breakdowns, the ones who celebrate team wins over personal achievements.",
+        "Look for influence without authority. That is the hallmark of natural leadership on the production floor."
+      ],
+      "quote": "Promote the person your team already follows — not just the person with the best production numbers."
+    },
+    {
+      "id": "making-the-transition-work",
+      "heading": "When Technicians Do Become Supervisors",
+      "level": 2,
+      "paragraphs": [
+        "Some technicians do make excellent supervisors — but only when they are selected for leadership traits, not just technical skill, and supported through a deliberate transition. Provide structured leadership development, clear expectations about their new role, and coaching that helps them shift from doing the work to leading the people who do the work."
+      ]
+    }
+  ]
+}
