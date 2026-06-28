@@ -76,3 +76,32 @@ body {
       transparent 20px
     );
 }
+
+.gold-particle {
+  animation: gold-particle-float linear infinite;
+  will-change: transform;
+}
+
+@keyframes gold-particle-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  25% {
+    transform: translate3d(6px, -12px, 0);
+  }
+  50% {
+    transform: translate3d(-4px, -20px, 0);
+  }
+  75% {
+    transform: translate3d(5px, -8px, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gold-particle {
+    display: none;
+    animation: none;
+    will-change: auto;
+  }
+}

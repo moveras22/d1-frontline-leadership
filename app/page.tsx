@@ -7,11 +7,13 @@ import WorkshopSection from "./components/WorkshopSection";
 import AboutSection from "./components/AboutSection";
 import EmailCapture from "./components/EmailCapture";
 import Footer from "./components/Footer";
+import GoldBackgroundAccent from "./components/GoldBackgroundAccent";
 
 export default function Home() {
   return (
     <>
-      <main>
+      <main className="relative isolate">
+        <GoldBackgroundAccent />
         <Hero />
         <ProblemSection />
         <FrameworkSection />
