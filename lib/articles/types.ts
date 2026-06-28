@@ -27,7 +27,7 @@ export type Article = {
   publishedAt: string;
   author: string;
   featuredImageAlt: string;
-  featuredImage?: string;
+  featuredImage: string;
   seo: {
     title: string;
     description: string;

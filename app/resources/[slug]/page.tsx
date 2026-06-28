@@ -94,7 +94,6 @@ export default async function ArticlePage({ params }: PageProps) {
 
             <div className="mx-auto max-w-3xl">
               <ArticleFeaturedImage
-                slug={article.slug}
                 alt={article.featuredImageAlt}
                 variant="hero"
                 src={article.featuredImage}

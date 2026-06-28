@@ -11,7 +11,6 @@ export default function ArticleCard({ article }: ArticleCardProps) {
   return (
     <article className="group flex flex-col overflow-hidden rounded-sm border border-white/8 bg-navy-800/50 transition-all hover:border-gold-500/30 hover:bg-navy-800/80">
       <ArticleFeaturedImage
-        slug={article.slug}
         alt={article.featuredImageAlt}
         variant="card"
         src={article.featuredImage}

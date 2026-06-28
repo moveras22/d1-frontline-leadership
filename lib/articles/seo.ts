@@ -31,9 +31,9 @@ export function buildArticleMetadata(article: Article): Metadata {
       siteName: "D1 Frontline Leadership",
       images: [
         {
-          url: `${SITE_URL}/og/resources/${article.slug}.png`,
-          width: 1200,
-          height: 630,
+          url: `${SITE_URL}${article.featuredImage}`,
+          width: 1600,
+          height: 900,
           alt: article.featuredImageAlt,
         },
       ],
@@ -42,7 +42,7 @@ export function buildArticleMetadata(article: Article): Metadata {
       card: "summary_large_image",
       title: article.seo.title,
       description: article.seo.description,
-      images: [`${SITE_URL}/og/resources/${article.slug}.png`],
+      images: [`${SITE_URL}${article.featuredImage}`],
     },
   };
 }
@@ -94,7 +94,7 @@ export function buildArticleJsonLd(article: Article) {
       name: article.author,
     },
     datePublished: article.publishedAt,
-    image: `${SITE_URL}/og/resources/${article.slug}.png`,
+    image: `${SITE_URL}${article.featuredImage}`,
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": getArticleUrl(article.slug),
