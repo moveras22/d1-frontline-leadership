@@ -111,13 +111,13 @@ export default function FrameworkSection() {
                   Click any pillar to learn how to identify, evaluate, and
                   develop that trait in future leaders.
                 </p>
-                <Link
-                  href="/free-framework"
+                <a
+                  href="#early-access"
                   data-track="framework_overview_cta"
                   className="mt-6 inline-flex w-fit items-center justify-center rounded-sm bg-gold-500 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-navy-950 transition-all hover:bg-gold-400 hover:shadow-[0_0_30px_rgba(212,175,55,0.25)] sm:text-sm"
                 >
                   Get the Free Framework
-                </Link>
+                </a>
               </div>
             </div>
           </div>

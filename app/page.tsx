@@ -19,7 +19,15 @@ export default function Home() {
         <FreeFrameworkSection />
         <WorkshopSection />
         <AboutSection />
-        <EmailCapture />
+        <EmailCapture
+          eyebrow="Free Download"
+          title="Download the Free Framework"
+          description="Enter your details below and we'll send the D1 Leadership Framework PDF straight to your inbox."
+          submitLabel="Get the Free Framework"
+          submittingLabel="Sending..."
+          submittedMessage="Check your inbox. Your D1 Leadership Framework PDF is on its way."
+          submitTrackId="free_framework_submit"
+        />
       </main>
       <Footer />
     </>

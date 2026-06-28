@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function FreeFrameworkSection() {
   return (
     <section id="free-framework" className="relative py-24 lg:py-32">
@@ -22,13 +20,13 @@ export default function FreeFrameworkSection() {
                 developing high-performance frontline leaders using traits
                 proven in elite athletics and operations.
               </p>
-              <Link
-                href="/free-framework"
+              <a
+                href="#early-access"
                 data-track="free_framework_cta"
                 className="mt-10 inline-flex items-center justify-center rounded-sm bg-gold-500 px-8 py-4 text-sm font-semibold uppercase tracking-wider text-navy-950 transition-all hover:bg-gold-400 hover:shadow-[0_0_30px_rgba(212,175,55,0.25)]"
               >
                 Get the Free Framework
-              </Link>
+              </a>
             </div>
           </div>
         </div>
