@@ -3,6 +3,7 @@ import ProblemSection from "./components/ProblemSection";
 import FrameworkSection from "./components/FrameworkSection";
 import D1USPSection from "./components/D1USPSection";
 import FreeFrameworkSection from "./components/FreeFrameworkSection";
+import OneOnOneTemplateSection from "./components/OneOnOneTemplateSection";
 import WorkshopSection from "./components/WorkshopSection";
 import AboutSection from "./components/AboutSection";
 import EmailCapture from "./components/EmailCapture";
@@ -19,6 +20,7 @@ export default function Home() {
         <FrameworkSection />
         <D1USPSection />
         <FreeFrameworkSection />
+        <OneOnOneTemplateSection />
         <WorkshopSection />
         <AboutSection />
         <EmailCapture
