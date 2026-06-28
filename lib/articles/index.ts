@@ -30,10 +30,12 @@ export function getArticlesByCategory(category: ArticleCategorySlug): Article[] 
   return readArticles().filter((article) => article.category === category);
 }
 
-export function getRelatedArticles(article: Article, limit = 3): Article[] {
-  return readArticles()
-    .filter((a) => a.slug !== article.slug && a.category === article.category)
-    .slice(0, limit);
+export function getRelatedArticles(article: Article, limit = 4): Article[] {
+  const candidates = readArticles().filter((a) => a.slug !== article.slug);
+  const sameCategory = candidates.filter((a) => a.category === article.category);
+  const otherCategory = candidates.filter((a) => a.category !== article.category);
+
+  return [...sameCategory, ...otherCategory].slice(0, limit);
 }
 
 export function getAdjacentArticles(slug: string): {

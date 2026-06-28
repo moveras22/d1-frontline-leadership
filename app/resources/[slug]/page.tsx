@@ -140,11 +140,11 @@ export default async function ArticlePage({ params }: PageProps) {
           </div>
 
           <div className="mt-16">
-            <ArticleCTA />
+            <ArticleRelated articles={related} />
           </div>
 
           <div className="mt-16">
-            <ArticleRelated articles={related} />
+            <ArticleCTA />
           </div>
 
           <div className="mt-16">
