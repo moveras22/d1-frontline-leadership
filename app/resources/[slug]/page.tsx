@@ -9,6 +9,7 @@ import ArticleRelated from "../../components/resources/ArticleRelated";
 import ArticleShareButtons from "../../components/resources/ArticleShareButtons";
 import ArticleStructuredData from "../../components/resources/ArticleStructuredData";
 import ArticleTableOfContents from "../../components/resources/ArticleTableOfContents";
+import ArticleFeaturedImage from "../../components/resources/ArticleFeaturedImage";
 import {
   getAdjacentArticles,
   getAllArticleSlugs,
@@ -92,10 +93,11 @@ export default async function ArticlePage({ params }: PageProps) {
             </Link>
 
             <div className="mx-auto max-w-3xl">
-              <div
-                className="image-placeholder aspect-[21/9] w-full rounded-sm"
-                role="img"
-                aria-label={article.featuredImageAlt}
+              <ArticleFeaturedImage
+                slug={article.slug}
+                alt={article.featuredImageAlt}
+                variant="hero"
+                src={article.featuredImage}
               />
 
               <div className="mt-8 text-center sm:mt-10">

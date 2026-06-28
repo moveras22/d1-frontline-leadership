@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Article } from "@/lib/articles/types";
 import { getCategoryLabel } from "@/lib/articles/types";
+import ArticleFeaturedImage from "./ArticleFeaturedImage";
 
 type ArticleCardProps = {
   article: Article;
@@ -9,10 +10,11 @@ type ArticleCardProps = {
 export default function ArticleCard({ article }: ArticleCardProps) {
   return (
     <article className="group flex flex-col overflow-hidden rounded-sm border border-white/8 bg-navy-800/50 transition-all hover:border-gold-500/30 hover:bg-navy-800/80">
-      <div
-        className="image-placeholder aspect-[16/9] w-full"
-        role="img"
-        aria-label={article.featuredImageAlt}
+      <ArticleFeaturedImage
+        slug={article.slug}
+        alt={article.featuredImageAlt}
+        variant="card"
+        src={article.featuredImage}
       />
 
       <div className="flex flex-1 flex-col p-6 sm:p-8">
