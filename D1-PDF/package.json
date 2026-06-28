@@ -1,0 +1,17 @@
+{
+  "name": "d1-leadership-framework-pdf",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The D1 Leadership Framework — printable PDF document",
+  "scripts": {
+    "prepare-vendor": "node scripts/prepare-vendor.js",
+    "build": "npm run prepare-vendor && node scripts/build-html.js",
+    "pdf": "node scripts/generate-pdf.js",
+    "build:pdf": "npm run build && npm run pdf",
+    "preview": "node scripts/preview-server.js"
+  },
+  "devDependencies": {
+    "pagedjs": "^0.4.3",
+    "puppeteer": "^24.0.0"
+  }
+}

@@ -1,0 +1,305 @@
+{
+  "pillars": [
+    {
+      "id": "coachability",
+      "number": 1,
+      "name": "Coachability",
+      "tagline": "The ability to receive feedback, adapt, improve, and continuously learn.",
+      "definition": "Coachability is the willingness to accept feedback, adjust behavior, and improve over time. Coachable leaders treat correction as information—not insult—and use it to get better on the next shift.",
+      "whyItMatters": "On the production floor, standards change, equipment evolves, and safety expectations tighten. Leaders who learn quickly outperform those who rely on tenure alone. Coachability determines how fast someone closes the gap between where they are and where the operation needs them to be.",
+      "behaviors": [
+        "Describes specific feedback received and how behavior changed afterward",
+        "Credits mentors, trainers, and prior leaders for their development",
+        "Shares concrete examples of skills improved within the last year",
+        "Owns mistakes on safety, quality, or production without deflecting",
+        "Asks questions, seeks clarification, and applies new SOPs without resistance"
+      ],
+      "warningSigns": [
+        "Blames equipment, coworkers, or management when results fall short",
+        "Cannot recall a time they were corrected or coached",
+        "Becomes defensive when discussing gaps in performance",
+        "Imply they already know what the team needs",
+        "Interview answers focus on credentials rather than growth"
+      ],
+      "interviewQuestions": [
+        "Tell me about a time you received difficult feedback on the job. What did you do next?",
+        "What skill have you deliberately improved in the past twelve months?",
+        "Describe a situation where you realized your approach was wrong.",
+        "Tell me about an early-career struggle and how you worked through it."
+      ],
+      "coachingTips": [
+        "Deliver direct feedback after gemba walks and observe whether behavior changes on the next shift.",
+        "Assign a stretch task slightly beyond current skill—then debrief what was learned.",
+        "Use a simple format after mistakes: what happened, what you own, what changes tomorrow.",
+        "Pair with a strong shift lead for 30 days and track openness to guidance.",
+        "Recognize leaders who ask for feedback before problems escalate."
+      ],
+      "evaluationScale": [
+        { "score": 1, "label": "Resistant", "description": "Rejects feedback, repeats errors, and discourages coaching on the floor." },
+        { "score": 2, "label": "Reluctant", "description": "Agrees in conversation but rarely changes behavior on shift." },
+        { "score": 3, "label": "Developing", "description": "Applies feedback with prompting; improvement is visible but inconsistent." },
+        { "score": 4, "label": "Responsive", "description": "Adjusts quickly and shows measurable improvement without repeated reminders." },
+        { "score": 5, "label": "Elite", "description": "Seeks feedback proactively and accelerates learning across the team." }
+      ],
+      "keyTakeaway": "Coachability predicts how quickly a leader will grow once the title changes—often more reliably than years of experience."
+    },
+    {
+      "id": "discipline",
+      "number": 2,
+      "name": "Discipline",
+      "tagline": "The ability to consistently execute the right actions regardless of motivation, circumstances, or obstacles.",
+      "definition": "Discipline is doing what the operation requires—every shift—not only when conditions are ideal. It shows up in routines, follow-through, and adherence to standards when no one is watching.",
+      "whyItMatters": "Plants run on consistency. Disciplined leaders maintain 5S, complete audits, hold huddles, and close action items whether production is smooth or under pressure. Without discipline, talent produces spikes—not sustained operational excellence.",
+      "behaviors": [
+        "Follows through on commitments without reminders",
+        "Maintains personal routines that support shift readiness and team standards",
+        "Can explain the systems and checklists they rely on daily",
+        "Prepares before critical events: launches, audits, staffing gaps, or customer visits",
+        "Holds self and team to safety, quality, and production standards equally"
+      ],
+      "warningSigns": [
+        "Starts initiatives but rarely finishes them",
+        "Attributes missed targets to motivation rather than execution",
+        "Cannot describe consistent habits that support performance",
+        "Talks about what they intend to do more than what they actually do",
+        "Struggles to cite examples of sustained effort over months"
+      ],
+      "interviewQuestions": [
+        "Tell me about a long-term goal that required sustained effort on the floor.",
+        "What routine or process helps you perform consistently shift after shift?",
+        "What do you do reliably that others on your team often skip?",
+        "Describe a period when results were slow—how did you stay committed?"
+      ],
+      "coachingTips": [
+        "Establish non-negotiable daily rhythms: pre-shift review, gemba, end-of-shift handoff.",
+        "Track standards visibly—SQDC boards, audit scores, and action-item closure rates.",
+        "Coach with checklists and cadence, not motivation speeches.",
+        "Address inconsistency early; lax standards spread faster than good ones.",
+        "Model the discipline you expect—your team mirrors your follow-through."
+      ],
+      "evaluationScale": [
+        { "score": 1, "label": "Inconsistent", "description": "Execution depends on mood or external pressure; standards slip routinely." },
+        { "score": 2, "label": "Sporadic", "description": "Performs well in bursts but cannot sustain fundamentals over time." },
+        { "score": 3, "label": "Developing", "description": "Meets standards with reminders; improving but not yet self-directed." },
+        { "score": 4, "label": "Reliable", "description": "Executes core routines without supervision across varying conditions." },
+        { "score": 5, "label": "Elite", "description": "Builds team-wide systems that make disciplined execution the default." }
+      ],
+      "keyTakeaway": "Discipline converts potential into predictable results—the foundation every other pillar depends on."
+    },
+    {
+      "id": "accountability",
+      "number": 3,
+      "name": "Accountability",
+      "tagline": "The willingness to take ownership of actions, decisions, results, and outcomes without blaming others.",
+      "definition": "Accountability means owning outcomes—good and bad. Accountable leaders answer for shift results, close loops on issues, and drive solutions instead of explanations.",
+      "whyItMatters": "When scrap rises, downtime hits, or a safety near-miss occurs, the organization needs leaders who step forward—not sideways. Accountability builds trust, shortens problem-solving cycles, and keeps continuous improvement from stalling in blame.",
+      "behaviors": [
+        "Names their role in failures and describes corrective action taken",
+        "Focuses conversations on solutions, containment, and prevention",
+        "Learns openly from missed targets and quality escapes",
+        "Accepts responsibility for team performance—not only individual tasks",
+        "Closes commitments on time: CAPA items, audits, training, and escalations"
+      ],
+      "warningSigns": [
+        "Defaults to blaming maintenance, planning, or prior shift",
+        "Unable to identify a personal mistake in the last year",
+        "Discusses problems without owning a path forward",
+        "Excuses persist even when patterns repeat",
+        "Emphasizes what others failed to do rather than what they control"
+      ],
+      "interviewQuestions": [
+        "Tell me about a significant mistake you made and what you learned.",
+        "Describe a time you missed a production or quality target.",
+        "How do you respond when your team underperforms on shift?",
+        "Tell me about a problem you inherited—how did you take ownership?"
+      ],
+      "coachingTips": [
+        "Separate blame from ownership: focus on facts, impact, and next actions.",
+        "Run brief after-action reviews after major incidents or customer issues.",
+        "Track whether leaders close their own action items before chasing the team's.",
+        "Reward transparent ownership—even when the news is bad.",
+        "Address deflection patterns immediately; they erode shift culture fast."
+      ],
+      "evaluationScale": [
+        { "score": 1, "label": "Deflecting", "description": "Consistently shifts responsibility; team learns to hide problems." },
+        { "score": 2, "label": "Selective", "description": "Owns wins but distances from failures or team breakdowns." },
+        { "score": 3, "label": "Developing", "description": "Takes ownership when prompted; follow-through is improving." },
+        { "score": 4, "label": "Accountable", "description": "Owns results proactively and drives solutions without excuses." },
+        { "score": 5, "label": "Elite", "description": "Models ownership under pressure and builds a team that does the same." }
+      ],
+      "keyTakeaway": "Teams trust leaders who tell the truth about results and fix problems—not leaders who protect ego."
+    },
+    {
+      "id": "competitive-drive",
+      "number": 4,
+      "name": "Competitive Drive",
+      "tagline": "The internal desire to improve, win, raise standards, and pursue better results.",
+      "definition": "Competitive drive is the hunger to improve—against last week's numbers, last year's benchmark, and the standard the operation truly requires. It is not ego. It is caring deeply about results.",
+      "whyItMatters": "Average plants accept average. Leaders with competitive drive push OEE, reduce waste, raise quality, and energize teams around shared targets. They notice drift before it becomes normal.",
+      "behaviors": [
+        "Talks about metrics, trends, and improvement with specificity",
+        "Sets goals for self and team beyond minimum expectations",
+        "Celebrates progress while raising the bar",
+        "Identifies gaps quickly and mobilizes the team to close them",
+        "Shows pride in team results—not personal spotlight alone"
+      ],
+      "warningSigns": [
+        "Indifferent toward targets, rankings, or plant performance",
+        "Accepts missed goals if explanations sound reasonable",
+        "Competes internally in ways that damage collaboration",
+        "Motivation appears tied only to recognition, not results",
+        "Cannot articulate what improvement looks like on their shift"
+      ],
+      "interviewQuestions": [
+        "Tell me about a goal you set that required you to push beyond comfort.",
+        "What does winning look like on a manufacturing floor?",
+        "Describe a process, metric, or result you improved.",
+        "What drives you when no one is watching?"
+      ],
+      "coachingTips": [
+        "Tie competitive energy to team KPIs: safety, quality, delivery, cost.",
+        "Review trend data weekly—not just end-of-month scorecards.",
+        "Correct toxic competitiveness early; standards beat politics.",
+        "Pair drive with humility and coachability for sustainable leadership.",
+        "Benchmark against prior periods and best-performing shifts, not excuses."
+      ],
+      "evaluationScale": [
+        { "score": 1, "label": "Complacent", "description": "Shows little interest in improving plant or team performance." },
+        { "score": 2, "label": "Passive", "description": "Responds when pushed but does not self-initiate improvement." },
+        { "score": 3, "label": "Developing", "description": "Engaged with results; needs structure to sustain momentum." },
+        { "score": 4, "label": "Driven", "description": "Consistently pursues improvement and lifts team expectations." },
+        { "score": 5, "label": "Elite", "description": "Inspires operational excellence; competes against standards, not people." }
+      ],
+      "keyTakeaway": "Drive moves teams forward—when it serves the shift, the plant, and the customer—not personal status."
+    },
+    {
+      "id": "pressure-response",
+      "number": 5,
+      "name": "Pressure Response",
+      "tagline": "How a person behaves when expectations, stress, uncertainty, and consequences increase.",
+      "definition": "Pressure response is composure and decision quality when the line stops, the customer calls, staffing is thin, or the schedule breaks. It is how a leader shows up when the cost of error is highest.",
+      "whyItMatters": "Fair-weather leadership is common. Real leadership appears during breakdowns, quality holds, safety incidents, and end-of-quarter pushes. Plants need supervisors who think clearly when others react.",
+      "behaviors": [
+        "Stays calm and directs attention to facts, safety, and containment",
+        "Communicates clearly during disruptions—who, what, when, next step",
+        "Prioritizes effectively when multiple issues compete for attention",
+        "Maintains standards under stress; does not shortcut procedures",
+        "Recovers team momentum after setbacks without blame spirals"
+      ],
+      "warningSigns": [
+        "Visible frustration, yelling, or panic during disruptions",
+        "Blames others while the line is still down",
+        "Avoids decisions when information is incomplete",
+        "Freezes or scatter-focuses when priorities shift suddenly",
+        "Team morale drops sharply during high-pressure periods"
+      ],
+      "interviewQuestions": [
+        "Tell me about the most stressful situation you faced in operations.",
+        "Describe a major problem that hit without warning—walk me through your response.",
+        "How do you prioritize when safety, quality, and production all demand attention?",
+        "Tell me about a decision you made with incomplete information."
+      ],
+      "coachingTips": [
+        "Debrief real events: line stops, escapes, staffing crises—what worked, what to repeat.",
+        "Practice escalation paths and priority frameworks before emergencies.",
+        "Observe leaders during actual disruptions, not just interviews.",
+        "Coach slower communication under pressure: clarify, assign, confirm.",
+        "Build resilience through graduated responsibility before peak season."
+      ],
+      "evaluationScale": [
+        { "score": 1, "label": "Reactive", "description": "Escalates emotion, blame, or confusion when pressure rises." },
+        { "score": 2, "label": "Unstable", "description": "Performance and tone drop significantly under stress." },
+        { "score": 3, "label": "Developing", "description": "Handles routine pressure; struggles in ambiguous or high-stakes events." },
+        { "score": 4, "label": "Composed", "description": "Leads calmly, decides clearly, and stabilizes the team." },
+        { "score": 5, "label": "Elite", "description": "Elevates team performance when conditions are hardest." }
+      ],
+      "keyTakeaway": "Pressure does not build character—it reveals whether habits, preparation, and integrity hold."
+    },
+    {
+      "id": "communication",
+      "number": 6,
+      "name": "Communication",
+      "tagline": "The ability to convey expectations, listen actively, align teams, and drive clarity under operational complexity.",
+      "definition": "Communication is turning plant priorities into shift-level clarity. It means direct expectations, active listening on the floor, respectful correction, and timely escalation with context.",
+      "whyItMatters": "Most supervisor failures trace back to misalignment—not inability to run a machine. Missed handoffs, vague direction, and poor escalation create defects, downtime, and disengagement long before technical skill limits the leader.",
+      "behaviors": [
+        "Sets clear expectations with outcomes, timing, and ownership",
+        "Confirms understanding before work begins—especially after changeovers",
+        "Delivers corrective feedback respectfully and specifically",
+        "Updates the team promptly when priorities or conditions shift",
+        "Escalates with facts, impact, and a recommended path forward"
+      ],
+      "warningSigns": [
+        "Assumes the team knows the plan without verification",
+        "Avoids difficult conversations or speaks in generalities",
+        "Messages differ by person, shift, or mood",
+        "Interrupts, dismisses, or fails to act on frontline input",
+        "Creates confusion during changeovers, launches, or crisis response"
+      ],
+      "interviewQuestions": [
+        "Tell me about a difficult message you delivered to your team.",
+        "How do you align priorities during a high-volume shift?",
+        "Describe a misunderstanding you caused and how you fixed it.",
+        "How do you communicate upward when your team is struggling?"
+      ],
+      "coachingTips": [
+        "Install a shift rhythm: start-up huddle, mid-shift check, handoff debrief.",
+        "Coach a simple structure: situation, expectation, impact, next step.",
+        "Require repeat-back on critical safety and quality instructions.",
+        "Evaluate communication on the floor during gemba—not in conference rooms.",
+        "Give feedback on clarity and tone, not just message content."
+      ],
+      "evaluationScale": [
+        { "score": 1, "label": "Unclear", "description": "Team lacks direction; issues repeat due to miscommunication." },
+        { "score": 2, "label": "Inconsistent", "description": "Message quality varies by situation or audience." },
+        { "score": 3, "label": "Developing", "description": "Adequate basics; improving listening and directness." },
+        { "score": 4, "label": "Clear", "description": "Aligns teams reliably and handles tough conversations well." },
+        { "score": 5, "label": "Elite", "description": "Creates exceptional clarity that accelerates execution and trust." }
+      ],
+      "keyTakeaway": "Clear communication multiplies every other leadership skill on the floor."
+    },
+    {
+      "id": "team-impact",
+      "number": 7,
+      "name": "Team Impact",
+      "tagline": "The ability to elevate the performance, accountability, and success of those around you.",
+      "definition": "Team impact measures whether a leader makes the people around them better. Strong supervisors develop operators, strengthen culture, and leave the shift stronger than they found it.",
+      "whyItMatters": "Production results scale through people. A supervisor who only personalizes output caps the team's potential. Leaders with team impact build bench strength, reduce turnover, and create shifts that perform with or without constant intervention.",
+      "behaviors": [
+        "Coaches operators with feedback, follow-up, and opportunity",
+        "Shares credit openly when the shift succeeds",
+        "Improves measurable team metrics over time",
+        "Builds trust and mutual accountability across the crew",
+        "Develops relationships across shifts, maintenance, and quality"
+      ],
+      "warningSigns": [
+        "Story centers on personal heroics rather than team development",
+        "Rarely invests time in coaching or cross-training",
+        "Creates friction between shifts, departments, or roles",
+        "Takes credit for results the team earned",
+        "Cannot describe how others improved because of their leadership"
+      ],
+      "interviewQuestions": [
+        "Tell me about someone you helped succeed in a production role.",
+        "Describe a team you improved—what changed and how?",
+        "What would former operators say about working for you?",
+        "How do you address poor performance on your shift?"
+      ],
+      "coachingTips": [
+        "Judge supervisors by team trends: scrap, attendance, engagement, skill depth.",
+        "Set a development goal each quarter—every leader grows at least one person.",
+        "Observe crew behavior when the supervisor is absent; culture persists or fades.",
+        "Coach delegation and teaching, not doing the job for the team.",
+        "Track retention and internal promotions as signals of impact."
+      ],
+      "evaluationScale": [
+        { "score": 1, "label": "Self-focused", "description": "Personal output matters more than team capability or culture." },
+        { "score": 2, "label": "Limited", "description": "Minimal development; team performance plateaus." },
+        { "score": 3, "label": "Developing", "description": "Supports others reactively; coaching skills emerging." },
+        { "score": 4, "label": "Multiplier", "description": "Consistently elevates performance and develops individuals." },
+        { "score": 5, "label": "Elite", "description": "Builds future leaders; positive impact outlasts their assignment." }
+      ],
+      "keyTakeaway": "Leadership is measured by what the team becomes—not by what one person produces alone."
+    }
+  ]
+}
