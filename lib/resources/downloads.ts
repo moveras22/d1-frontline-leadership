@@ -31,8 +31,9 @@ export const ONE_ON_ONE_MEETING_TEMPLATE: FreeDownload = {
   description:
     "Frontline leaders juggle production targets, shift coverage, and people development — often with no structured time to connect one-on-one. This free template gives supervisors a clear framework for weekly or monthly 1:1 conversations so nothing important gets missed.",
   category: "Free Download",
-  featuredImage: "/images/resources/15-interview-questions-leadership-ability.jpg",
-  featuredImageAlt: "Supervisor leading a one-on-one conversation with a team member",
+  featuredImage: "/images/downloads/one-on-one-meeting-template.jpg",
+  featuredImageAlt:
+    "Supervisor having a one-on-one conversation with an employee on the production floor",
   includedItems: [
     "A structured agenda for weekly and monthly one-on-one meetings",
     "Conversation prompts for performance, development, and obstacles",
@@ -60,9 +61,9 @@ export const SUPERVISOR_INTERVIEW_SCORECARD: FreeDownload = {
   description:
     "Hiring supervisors without a consistent evaluation method leads to gut-feel promotions and uneven leadership quality on the floor. This free scorecard gives plant managers and HR partners a structured way to assess candidates against the six D1 Leadership pillars — so every interview produces comparable, evidence-based ratings.",
   category: "Free Download",
-  featuredImage: "/images/resources/15-interview-questions-leadership-ability.jpg",
+  featuredImage: "/images/downloads/supervisor-interview-scorecard.jpg",
   featuredImageAlt:
-    "Manufacturing supervisor interviewing a candidate on the production floor",
+    "Hiring manager interviewing a candidate across a table reviewing a resume",
   includedItems: [
     "Rating grid for all six D1 Leadership pillars (1–5 scale)",
     "Key interview questions aligned to each pillar",

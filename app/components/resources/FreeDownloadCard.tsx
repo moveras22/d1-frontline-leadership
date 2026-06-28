@@ -8,7 +8,7 @@ type FreeDownloadCardProps = {
 
 export default function FreeDownloadCard({ download }: FreeDownloadCardProps) {
   return (
-    <article className="group flex flex-col overflow-hidden rounded-sm border border-white/8 bg-navy-800/50 transition-all hover:border-gold-500/30 hover:bg-navy-800/80">
+    <article className="group flex h-full flex-col overflow-hidden rounded-sm border border-white/8 bg-navy-800/50 transition-all hover:border-gold-500/30 hover:bg-navy-800/80">
       <ArticleFeaturedImage
         alt={download.featuredImageAlt}
         variant="card"

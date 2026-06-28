@@ -26,7 +26,7 @@ export default function FreeDownloadsSection({
         on the plant floor.
       </p>
 
-      <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+      <div className="mt-8 grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
         {downloads.map((download) => (
           <FreeDownloadCard key={download.slug} download={download} />
         ))}
