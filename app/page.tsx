@@ -29,6 +29,7 @@ export default function Home() {
           submittingLabel="Sending..."
           submittedMessage="Check your inbox. Your D1 Leadership Framework PDF is on its way."
           submitTrackId="free_framework_submit"
+          redirectTo="/thank-you"
         />
       </main>
       <Footer />

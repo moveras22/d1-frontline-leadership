@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { useRouter } from "next/navigation";
 import { trackLeadConversion } from "@/lib/analytics";
 
 type FormErrors = {
@@ -16,6 +17,7 @@ type EmailCaptureProps = {
   submittingLabel?: string;
   submittedMessage?: string;
   submitTrackId?: string;
+  redirectTo?: string;
 };
 
 export default function EmailCapture({
@@ -26,7 +28,9 @@ export default function EmailCapture({
   submittingLabel = "Joining...",
   submittedMessage = "You're on the list. We'll send your D1 Leadership Assessment and upcoming workshop invitations.",
   submitTrackId = "early_access_submit",
+  redirectTo,
 }: EmailCaptureProps) {
+  const router = useRouter();
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitError, setSubmitError] = useState("");
@@ -86,8 +90,14 @@ export default function EmailCapture({
         return;
       }
 
-      setSubmitted(true);
       trackLeadConversion();
+
+      if (redirectTo) {
+        router.push(redirectTo);
+        return;
+      }
+
+      setSubmitted(true);
     } catch {
       setSubmitError("Something went wrong. Please try again.");
     } finally {
