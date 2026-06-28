@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
@@ -38,6 +39,15 @@ const whileYoureHereCards = [
 export default function ThankYouPage() {
   return (
     <>
+      <Script id="google-ads-conversion" strategy="afterInteractive">
+        {`
+          gtag('event', 'conversion', {
+            'send_to': 'AW-18281766130/qKO6CL3li8ccEPK5tolE',
+            'value': 1.0,
+            'currency': 'USD'
+          });
+        `}
+      </Script>
       <main>
         <section className="relative overflow-hidden pt-28 pb-16 lg:pt-36 lg:pb-20">
           <div className="industrial-grid absolute inset-0 opacity-40" />
