@@ -36,12 +36,13 @@ export default function FreeDownloadCard({ download }: FreeDownloadCardProps) {
         <div className="mt-5 flex items-center justify-between gap-4">
           <span className="text-xs text-white/40">Free PDF</span>
 
-          <Link
-            href={download.href}
+          <a
+            href={download.pdfUrl}
+            download={download.pdfDownloadName}
             className="text-xs font-semibold uppercase tracking-wider text-gold-400 transition-colors group-hover:text-gold-300"
           >
             Download Template →
-          </Link>
+          </a>
         </div>
       </div>
     </article>

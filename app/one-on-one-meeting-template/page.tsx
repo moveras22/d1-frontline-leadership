@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Footer from "../components/Footer";
-import EmailCapture from "../components/EmailCapture";
 import { ONE_ON_ONE_MEETING_TEMPLATE } from "@/lib/resources/downloads";
 
 const resource = ONE_ON_ONE_MEETING_TEMPLATE;
@@ -100,16 +99,31 @@ export default function OneOnOneMeetingTemplatePage() {
           </div>
         </section>
 
-        <EmailCapture
-          eyebrow={resource.emailCapture.eyebrow}
-          title={resource.emailCapture.title}
-          description={resource.emailCapture.description}
-          submitLabel={resource.emailCapture.submitLabel}
-          submittingLabel={resource.emailCapture.submittingLabel}
-          submittedMessage={resource.emailCapture.submittedMessage}
-          submitTrackId={resource.emailCapture.submitTrackId}
-          redirectTo="/thank-you"
-        />
+        <section className="relative py-24 lg:py-32">
+          <div className="section-divider mx-auto max-w-7xl" />
+          <div className="mx-auto max-w-7xl px-6 pt-24 lg:px-8">
+            <div className="mx-auto max-w-2xl text-center">
+              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gold-400">
+                Free Download
+              </p>
+              <h2 className="mt-4 font-display text-3xl font-bold sm:text-4xl">
+                Download the Template
+              </h2>
+              <p className="mt-4 text-lg text-white/60">
+                Get the One-on-One Meeting Template instantly — no email
+                required.
+              </p>
+              <a
+                href={resource.pdfUrl}
+                download={resource.pdfDownloadName}
+                data-track="one_on_one_template_download"
+                className="mt-10 inline-flex items-center justify-center rounded-sm bg-gold-500 px-8 py-4 text-sm font-semibold uppercase tracking-wider text-navy-950 transition-all hover:bg-gold-400 hover:shadow-[0_0_30px_rgba(212,175,55,0.25)]"
+              >
+                Download Template
+              </a>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </>

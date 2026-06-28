@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { ONE_ON_ONE_MEETING_TEMPLATE } from "@/lib/resources/downloads";
 
 export default function OneOnOneTemplateSection() {
@@ -26,13 +25,14 @@ export default function OneOnOneTemplateSection() {
               <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/65">
                 {resource.description}
               </p>
-              <Link
-                href={resource.href}
+              <a
+                href={resource.pdfUrl}
+                download={resource.pdfDownloadName}
                 data-track="one_on_one_template_home_cta"
                 className="mt-10 inline-flex items-center justify-center rounded-sm bg-gold-500 px-8 py-4 text-sm font-semibold uppercase tracking-wider text-navy-950 transition-all hover:bg-gold-400 hover:shadow-[0_0_30px_rgba(212,175,55,0.25)]"
               >
                 Download Template
-              </Link>
+              </a>
             </div>
           </div>
         </div>

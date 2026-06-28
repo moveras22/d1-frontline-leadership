@@ -1,6 +1,8 @@
 export type FreeDownload = {
   slug: string;
   href: string;
+  pdfUrl: string;
+  pdfDownloadName: string;
   title: string;
   subtitle: string;
   excerpt: string;
@@ -13,20 +15,13 @@ export type FreeDownload = {
     title: string;
     description: string;
   };
-  emailCapture: {
-    eyebrow: string;
-    title: string;
-    description: string;
-    submitLabel: string;
-    submittingLabel: string;
-    submittedMessage: string;
-    submitTrackId: string;
-  };
 };
 
 export const ONE_ON_ONE_MEETING_TEMPLATE: FreeDownload = {
   slug: "one-on-one-meeting-template",
   href: "/one-on-one-meeting-template",
+  pdfUrl: "/downloads/one-on-one-meeting-template.pdf",
+  pdfDownloadName: "one-on-one-meeting-template.pdf",
   title: "Free One-on-One Meeting Template",
   subtitle: "A simple template for better supervisor-to-employee conversations.",
   excerpt:
@@ -46,17 +41,6 @@ export const ONE_ON_ONE_MEETING_TEMPLATE: FreeDownload = {
     title: "Free One-on-One Meeting Template | D1 Frontline Leadership",
     description:
       "Download a free one-on-one meeting template to help frontline supervisors structure weekly or monthly employee conversations with clarity and consistency.",
-  },
-  emailCapture: {
-    eyebrow: "Free Download",
-    title: "Download the Template",
-    description:
-      "Enter your details below and we'll send the One-on-One Meeting Template straight to your inbox.",
-    submitLabel: "Download Template",
-    submittingLabel: "Sending...",
-    submittedMessage:
-      "Check your inbox. Your One-on-One Meeting Template is on its way.",
-    submitTrackId: "one_on_one_template_submit",
   },
 };
 
