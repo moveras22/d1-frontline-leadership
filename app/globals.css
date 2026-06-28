@@ -82,19 +82,23 @@ body {
   will-change: transform;
 }
 
+.gold-particle--soft {
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.28);
+}
+
 @keyframes gold-particle-float {
   0%,
   100% {
     transform: translate3d(0, 0, 0);
   }
   25% {
-    transform: translate3d(6px, -12px, 0);
+    transform: translate3d(8px, -14px, 0);
   }
   50% {
-    transform: translate3d(-4px, -20px, 0);
+    transform: translate3d(-6px, -24px, 0);
   }
   75% {
-    transform: translate3d(5px, -8px, 0);
+    transform: translate3d(7px, -10px, 0);
   }
 }
 
