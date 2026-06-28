@@ -72,11 +72,15 @@ export default function Hero() {
                 sizes="(max-width: 1024px) 100vw, 560px"
                 quality={90}
                 priority
-                className="object-cover object-center"
+                className="object-cover object-center brightness-[1.18] contrast-[1.08]"
               />
-              <div className="absolute inset-0 bg-navy-950/60" />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-950/95 via-navy-950/35 to-navy-950/50" />
-              <div className="absolute inset-0 bg-gradient-to-r from-navy-950/40 to-navy-950/10" />
+              <div className="absolute inset-0 bg-navy-950/30" />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-950/55 via-navy-900/10 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-br from-navy-950/25 via-transparent to-transparent" />
+              <div
+                className="pointer-events-none absolute -bottom-8 -right-8 h-40 w-40 rounded-full bg-gold-500/20 blur-3xl"
+                aria-hidden="true"
+              />
             </div>
 
             <div className="absolute -bottom-4 -right-2 z-10 w-[min(100%,240px)] rounded-sm border border-gold-500/25 bg-navy-900/90 px-5 py-4 shadow-xl shadow-black/40 backdrop-blur-md sm:-bottom-5 sm:-right-4">
