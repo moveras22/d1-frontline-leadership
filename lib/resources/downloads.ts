@@ -3,6 +3,7 @@ export type FreeDownload = {
   href: string;
   pdfUrl: string;
   pdfDownloadName: string;
+  downloadButtonLabel: string;
   title: string;
   subtitle: string;
   excerpt: string;
@@ -22,6 +23,7 @@ export const ONE_ON_ONE_MEETING_TEMPLATE: FreeDownload = {
   href: "/one-on-one-meeting-template",
   pdfUrl: "/downloads/one-on-one-meeting-template.pdf",
   pdfDownloadName: "one-on-one-meeting-template.pdf",
+  downloadButtonLabel: "Download Template →",
   title: "Free One-on-One Meeting Template",
   subtitle: "A simple template for better supervisor-to-employee conversations.",
   excerpt:
@@ -44,4 +46,38 @@ export const ONE_ON_ONE_MEETING_TEMPLATE: FreeDownload = {
   },
 };
 
-export const FREE_DOWNLOADS: FreeDownload[] = [ONE_ON_ONE_MEETING_TEMPLATE];
+export const SUPERVISOR_INTERVIEW_SCORECARD: FreeDownload = {
+  slug: "supervisor-interview-scorecard",
+  href: "/supervisor-interview-scorecard",
+  pdfUrl: "/downloads/d1-supervisor-interview-scorecard.pdf",
+  pdfDownloadName: "d1-supervisor-interview-scorecard.pdf",
+  downloadButtonLabel: "Download Scorecard →",
+  title: "Free Supervisor Interview Scorecard",
+  subtitle:
+    "Evaluate leadership potential consistently during supervisor interviews.",
+  excerpt:
+    "Evaluate leadership potential consistently during interviews with a structured scorecard based on the D1 Leadership Framework.",
+  description:
+    "Hiring supervisors without a consistent evaluation method leads to gut-feel promotions and uneven leadership quality on the floor. This free scorecard gives plant managers and HR partners a structured way to assess candidates against the six D1 Leadership pillars — so every interview produces comparable, evidence-based ratings.",
+  category: "Free Download",
+  featuredImage: "/images/resources/15-interview-questions-leadership-ability.jpg",
+  featuredImageAlt:
+    "Manufacturing supervisor interviewing a candidate on the production floor",
+  includedItems: [
+    "Rating grid for all six D1 Leadership pillars (1–5 scale)",
+    "Key interview questions aligned to each pillar",
+    "Scoring summary with total, average, and development priorities",
+    "Recommendation framework: Ready, Develop with Support, or Not Ready",
+    "Designed for supervisor and team-lead interviews in manufacturing and operations",
+  ],
+  seo: {
+    title: "Free Supervisor Interview Scorecard | D1 Frontline Leadership",
+    description:
+      "Download a free supervisor interview scorecard to evaluate leadership potential consistently using the D1 Leadership Framework.",
+  },
+};
+
+export const FREE_DOWNLOADS: FreeDownload[] = [
+  ONE_ON_ONE_MEETING_TEMPLATE,
+  SUPERVISOR_INTERVIEW_SCORECARD,
+];

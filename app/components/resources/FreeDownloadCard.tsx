@@ -41,7 +41,7 @@ export default function FreeDownloadCard({ download }: FreeDownloadCardProps) {
             download={download.pdfDownloadName}
             className="text-xs font-semibold uppercase tracking-wider text-gold-400 transition-colors group-hover:text-gold-300"
           >
-            Download Template →
+            {download.downloadButtonLabel}
           </a>
         </div>
       </div>
