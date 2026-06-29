@@ -13,6 +13,9 @@ type EmailCaptureProps = {
   eyebrow?: string;
   title?: string;
   description?: string;
+  checklistItems?: string[];
+  trustText?: string;
+  footerNote?: string;
   submitLabel?: string;
   submittingLabel?: string;
   submittedMessage?: string;
@@ -24,6 +27,9 @@ export default function EmailCapture({
   eyebrow = "Get Started",
   title = "Join Early Access",
   description = "Be the first to access the D1 Assessment, workshop invitations, and leadership resources designed for manufacturing teams.",
+  checklistItems,
+  trustText,
+  footerNote,
   submitLabel = "Join Early Access",
   submittingLabel = "Joining...",
   submittedMessage = "You're on the list. We'll send your D1 Leadership Assessment and upcoming workshop invitations.",
@@ -110,6 +116,32 @@ export default function EmailCapture({
   const errorInputClass =
     "border-red-400/50 focus:border-red-400/70";
 
+  const checklist = checklistItems ? (
+    <ul className="space-y-3 rounded-sm border border-white/8 bg-navy-900/40 p-4 sm:p-5">
+      {checklistItems.map((item) => (
+        <li key={item} className="flex items-start gap-3 text-left">
+          <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold-500/15 text-gold-400">
+            <svg
+              className="h-3 w-3"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={3}
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4.5 12.75l6 6 9-13.5"
+              />
+            </svg>
+          </span>
+          <span className="text-sm leading-relaxed text-white/80">{item}</span>
+        </li>
+      ))}
+    </ul>
+  ) : null;
+
   return (
     <section id="early-access" className="relative py-24 lg:py-32">
       <div className="section-divider mx-auto max-w-7xl" />
@@ -176,6 +208,7 @@ export default function EmailCapture({
                     </p>
                   )}
                 </div>
+                {checklist}
                 <div>
                   <label
                     htmlFor="email"
@@ -199,6 +232,14 @@ export default function EmailCapture({
                     </p>
                   )}
                 </div>
+                {trustText && (
+                  <p className="text-center text-xs text-white/40">{trustText}</p>
+                )}
+                {footerNote && (
+                  <p className="text-center text-xs leading-relaxed text-white/35">
+                    {footerNote}
+                  </p>
+                )}
                 <div>
                   <label
                     htmlFor="company"
@@ -269,9 +310,11 @@ export default function EmailCapture({
               >
                 {isSubmitting ? submittingLabel : submitLabel}
               </button>
-              <p className="mt-4 text-center text-xs text-white/35">
-                No spam. Unsubscribe anytime.
-              </p>
+              {!trustText && (
+                <p className="mt-4 text-center text-xs text-white/35">
+                  No spam. Unsubscribe anytime.
+                </p>
+              )}
             </form>
           )}
         </div>

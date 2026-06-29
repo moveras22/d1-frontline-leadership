@@ -4,16 +4,17 @@ import EmailCapture from "../components/EmailCapture";
 import InteriorPageNav from "../components/InteriorPageNav";
 
 export const metadata: Metadata = {
-  title: "Free Download: The D1 Leadership Framework | D1 Frontline Leadership",
+  title: "Free D1 Leadership Toolkit | D1 Frontline Leadership",
   description:
-    "Download the D1 Leadership Framework scorecard for identifying, hiring, and developing high-performance frontline leaders.",
+    "Download the free D1 Leadership Toolkit with practical resources to help you hire, promote, and develop stronger frontline supervisors.",
 };
 
-const includedItems = [
-  "The 7 D1 traits of high-performance frontline leaders",
-  "A simple leadership scorecard",
-  "Interview questions for spotting coachability, discipline, resilience, and accountability",
-  "A practical way to evaluate supervisors, leads, and future managers",
+const toolkitItems = [
+  "D1 Leadership Framework Guide",
+  "15 Leadership Interview Questions",
+  "Supervisor Promotion Checklist",
+  "One-on-One Meeting Template",
+  "Leadership Readiness Assessment",
 ];
 
 export default function FreeFrameworkPage() {
@@ -27,21 +28,21 @@ export default function FreeFrameworkPage() {
             <InteriorPageNav
               breadcrumbs={[
                 { label: "Home", href: "/" },
-                { label: "D1 Framework" },
+                { label: "D1 Leadership Toolkit" },
               ]}
             />
             <div className="mx-auto max-w-3xl text-center">
               <p className="inline-flex items-center gap-2 rounded-full border border-gold-500/25 bg-gold-500/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">
-                Free PDF Download
+                D1 Leadership Toolkit
               </p>
               <h1 className="mt-6 font-display text-4xl font-bold leading-tight sm:text-5xl">
-                The D1 Leadership{" "}
-                <span className="gold-gradient-text">Framework</span>
+                The Free{" "}
+                <span className="gold-gradient-text">D1 Leadership Toolkit</span>
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-white/65 lg:text-xl">
-                A practical scorecard for identifying, hiring, and developing
-                high-performance frontline leaders using traits proven in elite
-                athletics and operations.
+                Practical resources built from real frontline leadership
+                experience to help you hire, promote, and develop stronger
+                supervisors.
               </p>
             </div>
           </div>
@@ -51,14 +52,14 @@ export default function FreeFrameworkPage() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-3xl rounded-sm border border-white/10 bg-navy-800/50 p-8 sm:p-10">
               <h2 className="font-display text-2xl font-bold sm:text-3xl">
-                What You&apos;ll Get
+                What&apos;s Included
               </h2>
               <p className="mt-4 text-white/60">
-                Everything you need to assess and develop frontline leadership
-                talent on your plant floor.
+                Everything in the toolkit is designed for manufacturing and
+                operations leaders who need practical tools—not theory.
               </p>
               <ul className="mt-8 space-y-4">
-                {includedItems.map((item) => (
+                {toolkitItems.map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold-500/15 text-gold-400">
                       <svg
@@ -67,6 +68,7 @@ export default function FreeFrameworkPage() {
                         viewBox="0 0 24 24"
                         stroke="currentColor"
                         strokeWidth={3}
+                        aria-hidden="true"
                       >
                         <path
                           strokeLinecap="round"
@@ -86,12 +88,15 @@ export default function FreeFrameworkPage() {
         </section>
 
         <EmailCapture
-          eyebrow="Get Your Copy"
-          title="Download the Free Framework"
-          description="Enter your details below and we'll send the D1 Leadership Framework PDF straight to your inbox."
-          submitLabel="Get the Free Framework"
+          eyebrow="Free Download"
+          title="Get the Free D1 Leadership Toolkit"
+          description="Practical resources built from real frontline leadership experience to help you hire, promote, and develop stronger supervisors."
+          checklistItems={toolkitItems}
+          trustText="Instant access. No spam. Unsubscribe anytime."
+          footerNote="Built for manufacturing, operations, and frontline leaders who want practical leadership tools—not theory."
+          submitLabel="Get Instant Access"
           submittingLabel="Sending..."
-          submittedMessage="Check your inbox. Your D1 Leadership Framework PDF is on its way."
+          submittedMessage="Check your inbox. Your D1 Leadership Toolkit is on its way."
           submitTrackId="free_framework_submit"
           redirectTo="/thank-you"
         />
