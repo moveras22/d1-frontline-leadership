@@ -33,12 +33,39 @@ function DropdownPanel({
   items,
   onNavigate,
   prependHome = false,
+  variant = "desktop",
 }: {
   items: NavLink[];
   onNavigate?: () => void;
   prependHome?: boolean;
+  variant?: "desktop" | "mobile";
 }) {
   const panelItems = prependHome ? [HOME_NAV_LINK, ...items] : items;
+
+  if (variant === "mobile") {
+    return (
+      <ul className="py-1">
+        {panelItems.map((item) => (
+          <li key={`${item.href}-${item.label}`}>
+            <Link
+              href={item.href}
+              onClick={onNavigate}
+              className="group/item block px-4 py-3 transition-colors hover:bg-gold-500/10"
+            >
+              <span className="block text-sm font-medium text-white/90 transition-colors group-hover/item:text-gold-400">
+                {item.label}
+              </span>
+              {item.description && (
+                <span className="mt-0.5 block text-xs leading-relaxed text-white/45 transition-colors group-hover/item:text-white/60">
+                  {item.description}
+                </span>
+              )}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    );
+  }
 
   return (
     <div className="overflow-hidden rounded-sm border border-white/10 bg-navy-900 shadow-2xl shadow-black/40">
@@ -148,7 +175,7 @@ function MobileNavSection({
   const panelId = `mobile-nav-${item.label.toLowerCase().replace(/\s+/g, "-")}`;
 
   return (
-    <div className="overflow-hidden rounded-sm border border-white/8 bg-navy-800/40">
+    <div className="rounded-sm border border-white/8 bg-navy-800/40">
       <button
         type="button"
         id={`${panelId}-button`}
@@ -168,11 +195,16 @@ function MobileNavSection({
       </button>
 
       {isOpen && (
-        <div id={panelId} role="region" aria-labelledby={`${panelId}-button`}>
+        <div
+          id={panelId}
+          role="region"
+          aria-labelledby={`${panelId}-button`}
+          className="border-t border-white/8 bg-navy-900/50"
+        >
           <DropdownPanel
             items={item.items}
             onNavigate={onNavigate}
-            prependHome
+            variant="mobile"
           />
         </div>
       )}
@@ -187,6 +219,7 @@ export default function Header() {
     null,
   );
   const headerRef = useRef<HTMLElement>(null);
+  const headerBarRef = useRef<HTMLDivElement>(null);
 
   const closeMobile = useCallback(() => {
     setMobileOpen(false);
@@ -194,8 +227,35 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
+    const bar = headerBarRef.current;
+    if (!bar) return;
+
+    const updateHeaderHeight = () => {
+      document.documentElement.style.setProperty(
+        "--mobile-header-height",
+        `${bar.offsetHeight}px`,
+      );
+    };
+
+    updateHeaderHeight();
+    window.addEventListener("resize", updateHeaderHeight);
+    return () => window.removeEventListener("resize", updateHeaderHeight);
+  }, []);
+
+  useEffect(() => {
     closeMobile();
   }, [pathname, closeMobile]);
+
+  useEffect(() => {
+    if (!mobileOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [mobileOpen]);
 
   useEffect(() => {
     if (!mobileOpen) return;
@@ -218,7 +278,10 @@ export default function Header() {
       ref={headerRef}
       className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-navy-950/90 backdrop-blur-xl"
     >
-      <div className="mx-auto flex max-w-[90rem] items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8 lg:py-4">
+      <div
+        ref={headerBarRef}
+        className="mx-auto flex w-full max-w-[90rem] shrink-0 items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8 lg:py-4"
+      >
         <Link
           href="/"
           aria-label="Go to homepage"
@@ -263,23 +326,43 @@ export default function Header() {
 
       {mobileOpen && (
         <nav
-          className="border-t border-white/5 bg-navy-900 px-4 py-4 lg:hidden"
+          id="mobile-menu"
+          className="overflow-y-auto overscroll-y-contain border-t border-white/5 bg-navy-900 [-webkit-overflow-scrolling:touch] lg:hidden"
+          style={{
+            maxHeight: "calc(100dvh - var(--mobile-header-height, 4rem))",
+          }}
           aria-label="Main mobile"
         >
-          <div className="flex flex-col gap-3">
-            <Link
-              href="/"
+          <div className="sticky top-0 z-10 flex items-center justify-between border-b border-white/5 bg-navy-900 px-4 py-3">
+            <span className="text-xs font-semibold uppercase tracking-wider text-white/45">
+              Menu
+            </span>
+            <button
+              type="button"
               onClick={closeMobile}
-              className={`block rounded-sm px-4 py-3 text-base font-semibold uppercase tracking-wider transition-colors ${
-                pathname === "/"
-                  ? "bg-gold-500/10 text-gold-400"
-                  : "text-white/80 hover:text-gold-400"
-              }`}
-              aria-current={pathname === "/" ? "page" : undefined}
+              aria-label="Close menu"
+              className="inline-flex items-center gap-2 rounded-sm px-3 py-2 text-sm font-semibold uppercase tracking-wider text-white/70 transition-colors hover:bg-white/5 hover:text-gold-400"
             >
-              Home
-            </Link>
-            {MAIN_NAV.filter((item) => item.label !== "Home").map((item) => (
+              <svg
+                className="h-4 w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18 18 6M6 6l12 12"
+                />
+              </svg>
+              Close
+            </button>
+          </div>
+
+          <div className="flex flex-col gap-2 px-4 py-4 pb-8">
+            {MAIN_NAV.map((item) => (
               <MobileNavSection
                 key={item.label}
                 item={item}
