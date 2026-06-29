@@ -11,7 +11,11 @@ export default function FreeDownloadsSection({
   if (downloads.length === 0) return null;
 
   return (
-    <section aria-labelledby="free-downloads-heading" className="mb-16 lg:mb-20">
+    <section
+      id="free-downloads"
+      aria-labelledby="free-downloads-heading"
+      className="mb-16 scroll-mt-28 lg:mb-20"
+    >
       <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gold-400">
         Free Tools
       </p>

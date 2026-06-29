@@ -7,10 +7,22 @@ import ArticleCard from "./ArticleCard";
 
 type ResourcesGridProps = {
   articles: Article[];
+  initialCategory?: string;
 };
 
-export default function ResourcesGrid({ articles }: ResourcesGridProps) {
-  const [activeCategory, setActiveCategory] = useState<string>("all");
+function resolveInitialCategory(initialCategory?: string): string {
+  if (!initialCategory || initialCategory === "all") return "all";
+  const valid = ARTICLE_CATEGORIES.some((c) => c.slug === initialCategory);
+  return valid ? initialCategory : "all";
+}
+
+export default function ResourcesGrid({
+  articles,
+  initialCategory,
+}: ResourcesGridProps) {
+  const [activeCategory, setActiveCategory] = useState<string>(() =>
+    resolveInitialCategory(initialCategory),
+  );
 
   const filteredArticles =
     activeCategory === "all"

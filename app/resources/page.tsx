@@ -7,8 +7,13 @@ import { buildResourcesMetadata } from "@/lib/articles/seo";
 
 export const metadata = buildResourcesMetadata();
 
-export default function ResourcesPage() {
+type ResourcesPageProps = {
+  searchParams: Promise<{ category?: string }>;
+};
+
+export default async function ResourcesPage({ searchParams }: ResourcesPageProps) {
   const articles = getAllArticles();
+  const { category } = await searchParams;
 
   return (
     <>
@@ -36,7 +41,7 @@ export default function ResourcesPage() {
         <section className="relative pb-24 lg:pb-32">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <FreeDownloadsSection downloads={FREE_DOWNLOADS} />
-            <ResourcesGrid articles={articles} />
+            <ResourcesGrid articles={articles} initialCategory={category} />
           </div>
         </section>
       </main>
