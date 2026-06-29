@@ -119,6 +119,24 @@ export function getTrainingProgramSlugs(): string[] {
   return TRAINING_PROGRAMS.map((program) => program.slug);
 }
 
+export const TRAINING_TRUST_CARDS = [
+  {
+    title: "Practical Manufacturing Experience",
+    description:
+      "Programs built from real plant-floor leadership challenges, not generic management theory.",
+  },
+  {
+    title: "Leadership Hiring Framework",
+    description:
+      "The D1 Framework helps you identify, develop, and promote supervisors who will succeed.",
+  },
+  {
+    title: "Built for Frontline Operations",
+    description:
+      "Training designed for shift work, production pressure, and the supervisors who run it.",
+  },
+] as const;
+
 /** Legacy slug used in navigation before program pages were consolidated. */
 export const TRAINING_OVERVIEW_SLUG = "frontline-leadership";
 

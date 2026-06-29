@@ -1,6 +1,7 @@
 import Link from "next/link";
 import InteriorPageNav from "../InteriorPageNav";
-import type { TrainingProgram } from "@/lib/training";
+import TrainingProgramInterestForm from "./TrainingProgramInterestForm";
+import { TRAINING_TRUST_CARDS, type TrainingProgram } from "@/lib/training";
 
 type TrainingProgramDetailProps = {
   program: TrainingProgram;
@@ -34,6 +35,31 @@ export default function TrainingProgramDetail({
               <p className="mt-6 text-lg leading-relaxed text-white/65 lg:text-xl">
                 {program.description}
               </p>
+
+              <div className="mt-10 rounded-sm border border-gold-500/20 bg-gold-500/5 p-6 sm:p-8">
+                <h2 className="font-display text-2xl font-bold sm:text-3xl">
+                  Ready to Develop Stronger Frontline Leaders?
+                </h2>
+                <p className="mt-4 text-base leading-relaxed text-white/65">
+                  Whether you&apos;re preparing new supervisors or developing
+                  experienced leaders, D1 Frontline Leadership provides
+                  practical leadership training built for real operations.
+                </p>
+                <div className="mt-6 flex flex-col gap-4 sm:flex-row">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-center rounded-sm bg-gold-500 px-6 py-3.5 text-sm font-semibold uppercase tracking-wider text-navy-950 transition-all hover:bg-gold-400 hover:shadow-[0_0_30px_rgba(212,175,55,0.2)]"
+                  >
+                    Schedule a Free Consultation
+                  </Link>
+                  <Link
+                    href="/free-framework"
+                    className="inline-flex items-center justify-center rounded-sm border border-white/15 px-6 py-3.5 text-sm font-semibold uppercase tracking-wider text-white/75 transition-all hover:border-gold-500/30 hover:text-gold-400"
+                  >
+                    Download Free Leadership Toolkit
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -73,28 +99,64 @@ export default function TrainingProgramDetail({
           </div>
         </section>
 
+        <section className="relative pb-16 lg:pb-20">
+          <div className="mx-auto max-w-3xl px-6 lg:px-8">
+            <TrainingProgramInterestForm
+              programTitle={program.title}
+              programSlug={program.slug}
+            />
+          </div>
+        </section>
+
+        <section className="relative pb-16 lg:pb-20">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto max-w-5xl">
+              <div className="text-center">
+                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gold-400">
+                  Why D1
+                </p>
+                <h2 className="mt-3 font-display text-3xl font-bold sm:text-4xl">
+                  Why Organizations Choose D1
+                </h2>
+              </div>
+
+              <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {TRAINING_TRUST_CARDS.map((card) => (
+                  <article
+                    key={card.title}
+                    className="rounded-sm border border-white/10 bg-navy-800/50 p-6 sm:p-8"
+                  >
+                    <h3 className="font-display text-xl font-bold text-white/90">
+                      {card.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-white/60">
+                      {card.description}
+                    </p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="relative pb-24 lg:pb-32">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-3xl rounded-sm border border-gold-500/20 bg-gold-500/5 p-8 text-center sm:p-10">
               <h2 className="font-display text-2xl font-bold sm:text-3xl">
-                Start Building Stronger Frontline Leaders
+                Ready to build stronger supervisors?
               </h2>
-              <p className="mt-4 text-base leading-relaxed text-white/60">
-                Explore the D1 Framework and download free leadership resources
-                to begin developing supervisors on your plant floor today.
-              </p>
               <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <Link
-                  href="/free-framework"
-                  className="inline-flex items-center justify-center rounded-sm border border-gold-500/40 bg-gold-500/10 px-6 py-3 text-sm font-semibold uppercase tracking-wider text-gold-400 transition-all hover:border-gold-500/60 hover:bg-gold-500/15 hover:text-gold-300"
+                  href="/contact"
+                  className="inline-flex items-center justify-center rounded-sm bg-gold-500 px-6 py-3.5 text-sm font-semibold uppercase tracking-wider text-navy-950 transition-all hover:bg-gold-400 hover:shadow-[0_0_30px_rgba(212,175,55,0.2)]"
                 >
-                  Explore the D1 Framework
+                  Schedule a Consultation
                 </Link>
                 <Link
-                  href="/resources"
-                  className="inline-flex items-center justify-center rounded-sm border border-white/15 px-6 py-3 text-sm font-semibold uppercase tracking-wider text-white/75 transition-all hover:border-gold-500/30 hover:text-gold-400"
+                  href="/contact"
+                  className="inline-flex items-center justify-center rounded-sm border border-white/15 px-6 py-3.5 text-sm font-semibold uppercase tracking-wider text-white/75 transition-all hover:border-gold-500/30 hover:text-gold-400"
                 >
-                  Download Free Resources
+                  Contact D1
                 </Link>
               </div>
             </div>
