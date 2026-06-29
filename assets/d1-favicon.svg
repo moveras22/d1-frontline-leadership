@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+  <rect width="120" height="120" rx="6" fill="#0a1628" stroke="#d4af37" stroke-opacity="0.45" stroke-width="2"/>
+  <text
+    x="60"
+    y="67"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="46"
+    font-weight="700"
+    fill="#d4af37"
+    letter-spacing="0.08em"
+  >D1</text>
+  <line x1="22" y1="98" x2="98" y2="98" stroke="#d4af37" stroke-width="1.5" opacity="0.5"/>
+</svg>
