@@ -21,9 +21,14 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "D1 Frontline Leadership | Build Elite Frontline Leaders",
+  title: "D1 Frontline Leadership",
   description:
-    "A practical framework for identifying, developing, and coaching high-performance frontline leaders in manufacturing.",
+    "Frontline leadership training, supervisor development, hiring assessments, and practical leadership resources for operations teams.",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
