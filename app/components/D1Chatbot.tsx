@@ -38,11 +38,19 @@ function createMessage(
   };
 }
 
+const SESSION_DISMISSED_KEY = "d1-chat-auto-dismissed";
+const SESSION_AUTO_SHOWN_KEY = "d1-chat-auto-shown";
+const AUTO_OPEN_DELAY_MS = 2000;
+const PANEL_ANIMATION_MS = 275;
+
 export default function D1Chatbot() {
   const panelId = useId();
   const inputId = useId();
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+  const toggleButtonRef = useRef<HTMLButtonElement>(null);
+  const autoOpenTimerRef = useRef<number | null>(null);
 
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
@@ -60,6 +68,38 @@ export default function D1Chatbot() {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, []);
 
+  const closeChat = useCallback(() => {
+    setIsOpen(false);
+    sessionStorage.setItem(SESSION_DISMISSED_KEY, "true");
+    window.requestAnimationFrame(() => {
+      toggleButtonRef.current?.focus();
+    });
+  }, []);
+
+  const openChat = useCallback(() => {
+    setIsOpen(true);
+  }, []);
+
+  useEffect(() => {
+    if (
+      sessionStorage.getItem(SESSION_DISMISSED_KEY) ||
+      sessionStorage.getItem(SESSION_AUTO_SHOWN_KEY)
+    ) {
+      return;
+    }
+
+    autoOpenTimerRef.current = window.setTimeout(() => {
+      sessionStorage.setItem(SESSION_AUTO_SHOWN_KEY, "true");
+      setIsOpen(true);
+    }, AUTO_OPEN_DELAY_MS);
+
+    return () => {
+      if (autoOpenTimerRef.current !== null) {
+        window.clearTimeout(autoOpenTimerRef.current);
+      }
+    };
+  }, []);
+
   useEffect(() => {
     scrollToBottom();
   }, [messages, leadCaptureShown, scrollToBottom]);
@@ -73,9 +113,22 @@ export default function D1Chatbot() {
 
   useEffect(() => {
     if (isOpen) {
-      inputRef.current?.focus();
+      panelRef.current?.focus();
     }
   }, [isOpen]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    function handleEscape(event: globalThis.KeyboardEvent) {
+      if (event.key === "Escape") {
+        closeChat();
+      }
+    }
+
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, [isOpen, closeChat]);
 
   const handleUserMessage = useCallback(
     (text: string) => {
@@ -175,20 +228,26 @@ export default function D1Chatbot() {
   return (
     <div className="pointer-events-none fixed inset-x-0 bottom-0 z-50 flex justify-end p-4 sm:inset-x-auto sm:bottom-4 sm:right-4 sm:p-0">
       <div
-        className={`pointer-events-auto flex flex-col items-end gap-3 transition-all duration-300 ${
-          isOpen ? "w-full max-w-[380px]" : "w-auto"
+        className={`pointer-events-auto flex flex-col items-end gap-3 transition-all ease-out ${
+          isOpen
+            ? "w-[88vw] max-w-[380px] sm:w-full"
+            : "w-auto"
         }`}
+        style={{ transitionDuration: `${PANEL_ANIMATION_MS}ms` }}
       >
         <div
+          ref={panelRef}
           id={panelId}
           role="dialog"
           aria-label="D1 Leadership Assistant"
           aria-hidden={!isOpen}
-          className={`origin-bottom-right overflow-hidden rounded-sm border border-white/10 bg-navy-900 shadow-2xl shadow-black/50 transition-all duration-300 ease-out ${
+          tabIndex={-1}
+          className={`origin-bottom-right overflow-hidden rounded-sm border border-white/10 bg-navy-900 shadow-2xl shadow-black/50 transition-all ease-out ${
             isOpen
-              ? "max-h-[min(80vh,560px)] w-full translate-y-0 scale-100 opacity-100"
-              : "pointer-events-none max-h-0 w-full translate-y-4 scale-95 opacity-0"
+              ? "max-h-[min(75vh,560px)] w-full translate-y-0 opacity-100"
+              : "pointer-events-none max-h-0 w-full translate-y-3 opacity-0"
           }`}
+          style={{ transitionDuration: `${PANEL_ANIMATION_MS}ms` }}
         >
           <div className="flex items-center justify-between border-b border-white/10 bg-navy-950/80 px-4 py-3">
             <div className="flex items-center gap-3">
@@ -204,9 +263,9 @@ export default function D1Chatbot() {
             </div>
             <button
               type="button"
-              onClick={() => setIsOpen(false)}
+              onClick={closeChat}
               aria-label="Close chat"
-              className="rounded-sm p-1.5 text-white/50 transition-colors hover:bg-white/5 hover:text-gold-400"
+              className="rounded-sm p-2 text-white/50 transition-colors hover:bg-white/5 hover:text-gold-400"
             >
               <svg
                 className="h-5 w-5"
@@ -239,14 +298,14 @@ export default function D1Chatbot() {
                         : "border border-white/8 bg-navy-800/80 text-white/75"
                     }`}
                   >
-                    <p>{message.text}</p>
+                    <p className="whitespace-pre-line">{message.text}</p>
                     {message.links && message.links.length > 0 && (
                       <ul className="mt-3 space-y-2">
                         {message.links.map((link) => (
                           <li key={link.href}>
                             <Link
                               href={link.href}
-                              onClick={() => setIsOpen(false)}
+                              onClick={closeChat}
                               className="inline-flex text-xs font-semibold uppercase tracking-wider text-gold-400 transition-colors hover:text-gold-300"
                             >
                               {link.label} →
@@ -360,10 +419,24 @@ export default function D1Chatbot() {
         </div>
 
         <button
+          ref={toggleButtonRef}
           type="button"
           aria-expanded={isOpen}
           aria-controls={panelId}
-          onClick={() => setIsOpen((open) => !open)}
+          onClick={() => {
+            if (isOpen) {
+              closeChat();
+              return;
+            }
+
+            if (autoOpenTimerRef.current !== null) {
+              window.clearTimeout(autoOpenTimerRef.current);
+              autoOpenTimerRef.current = null;
+            }
+
+            sessionStorage.setItem(SESSION_AUTO_SHOWN_KEY, "true");
+            openChat();
+          }}
           className="flex h-14 w-14 items-center justify-center rounded-full border border-gold-500/40 bg-navy-900 text-gold-400 shadow-lg shadow-black/30 transition-all hover:scale-105 hover:border-gold-500/60 hover:bg-navy-800 hover:text-gold-300"
         >
           {isOpen ? (

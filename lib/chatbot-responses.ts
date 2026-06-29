@@ -8,8 +8,14 @@ export type BotResponse = {
   links?: ChatLink[];
 };
 
-export const WELCOME_MESSAGE =
-  "Hi, I'm the D1 Leadership Assistant. I can help with supervisor training, hiring, the D1 Framework, free resources, or contacting D1.";
+export const WELCOME_MESSAGE = `👋 Welcome to D1 Frontline Leadership!
+I can help you:
+• Understand the D1 Framework
+• Improve supervisor hiring decisions
+• Find free leadership resources
+• Explore training programs
+• Answer leadership questions
+How can I help today?`;
 
 export const FALLBACK_MESSAGE =
   "That's a great question. The best next step is to contact D1 directly at info@d1frontlineleadership.com or visit the Contact page.";
@@ -19,9 +25,9 @@ export const LEAD_CAPTURE_PROMPT =
 
 export const QUICK_REPLIES = [
   "What is the D1 Framework?",
-  "I need supervisor training",
-  "Help me hire better supervisors",
-  "Show free resources",
+  "Free Leadership Toolkit",
+  "Supervisor Training",
+  "Hire Better Leaders",
   "Contact D1",
 ] as const;
 
@@ -98,16 +104,25 @@ export function getBotResponse(input: string): BotResponse {
     return frameworkResponse();
   }
 
-  if (normalized === "i need supervisor training") {
+  if (
+    normalized === "free leadership toolkit" ||
+    normalized === "show free resources"
+  ) {
+    return resourcesResponse();
+  }
+
+  if (
+    normalized === "supervisor training" ||
+    normalized === "i need supervisor training"
+  ) {
     return trainingResponse();
   }
 
-  if (normalized === "help me hire better supervisors") {
+  if (
+    normalized === "hire better leaders" ||
+    normalized === "help me hire better supervisors"
+  ) {
     return hiringResponse();
-  }
-
-  if (normalized === "show free resources") {
-    return resourcesResponse();
   }
 
   if (normalized === "contact d1") {
