@@ -23,8 +23,8 @@ export const MAIN_NAV: NavItem[] = [
     items: [
       {
         label: "Frontline Leadership Training",
-        href: "/training/frontline-leadership",
-        description: "Core skills for new and developing supervisors",
+        href: "/training",
+        description: "Complete overview of D1 frontline leadership programs",
       },
       {
         label: "Supervisor Bootcamp",
@@ -125,6 +125,11 @@ export const MAIN_NAV: NavItem[] = [
     type: "dropdown",
     items: [
       {
+        label: "Organizational Overview",
+        href: "/for-organizations",
+        description: "Frontline leadership solutions for your operation",
+      },
+      {
         label: "Hire Better Supervisors",
         href: "/for-organizations/hire-better-supervisors",
         description: "Structured hiring for frontline leaders",
@@ -152,63 +157,6 @@ export const MAIN_NAV: NavItem[] = [
     type: "link",
   },
 ];
-
-export const TRAINING_PAGES: Record<
-  string,
-  { title: string; description: string }
-> = {
-  "frontline-leadership": {
-    title: "Frontline Leadership Training",
-    description:
-      "Structured development for supervisors and team leads responsible for daily production, safety, and people performance on the plant floor.",
-  },
-  "supervisor-bootcamp": {
-    title: "Supervisor Bootcamp",
-    description:
-      "An intensive program for first-time supervisors transitioning from operator to leader — covering accountability, communication, and shift leadership.",
-  },
-  "manufacturing-leadership": {
-    title: "Manufacturing Leadership",
-    description:
-      "Leadership training designed specifically for production environments — where throughput, quality, safety, and team morale all depend on frontline managers.",
-  },
-  accountability: {
-    title: "Accountability Training",
-    description:
-      "Help supervisors set clear expectations, follow through consistently, and build teams that hold themselves to high standards without micromanagement.",
-  },
-  "team-performance": {
-    title: "Team Performance",
-    description:
-      "Equip frontline leaders with the skills to drive productivity, resolve conflict, and build high-performing crews across every shift.",
-  },
-};
-
-export const ORGANIZATION_PAGES: Record<
-  string,
-  { title: string; description: string }
-> = {
-  "hire-better-supervisors": {
-    title: "Hire Better Supervisors",
-    description:
-      "Structured interview processes, behavioral assessments, and D1-based evaluation tools to identify candidates with true frontline leadership potential.",
-  },
-  "promote-future-leaders": {
-    title: "Promote Future Leaders",
-    description:
-      "Stop promoting your best technician and hoping for the best. Identify leadership traits before promotion and build a pipeline of ready supervisors.",
-  },
-  "develop-frontline-managers": {
-    title: "Develop Frontline Managers",
-    description:
-      "Ongoing coaching and development programs that turn capable supervisors into consistent, high-impact leaders across your operation.",
-  },
-  "custom-training": {
-    title: "Custom Training",
-    description:
-      "Tailored frontline leadership programs built around your culture, processes, and supervisory challenges — delivered for manufacturing and operations teams.",
-  },
-};
 
 export function isNavActive(pathname: string, href: string): boolean {
   const baseHref = href.split("#")[0].split("?")[0];

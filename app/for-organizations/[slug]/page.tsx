@@ -1,37 +1,40 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import ComingSoonPage from "../../components/ComingSoonPage";
-import { ORGANIZATION_PAGES } from "@/lib/navigation";
+import Footer from "../../components/Footer";
+import OrganizationProgramDetail from "../../components/organizations/OrganizationProgramDetail";
+import {
+  getOrganizationProgram,
+  getOrganizationProgramSlugs,
+} from "@/lib/organizations";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
 };
 
 export function generateStaticParams() {
-  return Object.keys(ORGANIZATION_PAGES).map((slug) => ({ slug }));
+  return getOrganizationProgramSlugs().map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const page = ORGANIZATION_PAGES[slug];
-  if (!page) return {};
+  const program = getOrganizationProgram(slug);
+  if (!program) return {};
 
   return {
-    title: `${page.title} | D1 Frontline Leadership`,
-    description: page.description,
+    title: `${program.title} | D1 Frontline Leadership`,
+    description: program.shortDescription,
   };
 }
 
-export default async function OrganizationPage({ params }: PageProps) {
+export default async function OrganizationProgramPage({ params }: PageProps) {
   const { slug } = await params;
-  const page = ORGANIZATION_PAGES[slug];
-  if (!page) notFound();
+  const program = getOrganizationProgram(slug);
+  if (!program) notFound();
 
   return (
-    <ComingSoonPage
-      title={page.title}
-      description={page.description}
-      badge="For Organizations"
-    />
+    <>
+      <OrganizationProgramDetail program={program} />
+      <Footer />
+    </>
   );
 }
