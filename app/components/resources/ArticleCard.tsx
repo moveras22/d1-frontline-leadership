@@ -5,13 +5,15 @@ import ArticleFeaturedImage from "./ArticleFeaturedImage";
 
 type ArticleCardProps = {
   article: Article;
+  priority?: boolean;
 };
 
-export default function ArticleCard({ article }: ArticleCardProps) {
+export default function ArticleCard({ article, priority = false }: ArticleCardProps) {
   return (
     <article className="group flex flex-col overflow-hidden rounded-sm border border-white/8 bg-navy-800/50 transition-all hover:border-gold-500/30 hover:bg-navy-800/80">
       <ArticleFeaturedImage
         alt={article.featuredImageAlt}
+        priority={priority}
         variant="card"
         src={article.featuredImage}
       />

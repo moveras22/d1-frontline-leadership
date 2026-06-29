@@ -50,8 +50,12 @@ export default function ResourcesGrid({ articles }: ResourcesGridProps) {
 
       {filteredArticles.length > 0 ? (
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-          {filteredArticles.map((article) => (
-            <ArticleCard key={article.slug} article={article} />
+          {filteredArticles.map((article, index) => (
+            <ArticleCard
+              key={article.slug}
+              article={article}
+              priority={index < 3}
+            />
           ))}
         </div>
       ) : (
