@@ -16,7 +16,18 @@ export type NavItem =
       items: NavLink[];
     };
 
+export const HOME_NAV_LINK: NavLink = {
+  label: "Home",
+  href: "/",
+  description: "Return to the D1 homepage",
+};
+
 export const MAIN_NAV: NavItem[] = [
+  {
+    label: "Home",
+    href: "/",
+    type: "link",
+  },
   {
     label: "Training",
     type: "dropdown",

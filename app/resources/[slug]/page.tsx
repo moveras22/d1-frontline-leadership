@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import Footer from "../../components/Footer";
+import InteriorPageNav from "../../components/InteriorPageNav";
 import ArticleBody from "../../components/resources/ArticleBody";
 import ArticleCTA from "../../components/resources/ArticleCTA";
 import ArticleNavigation from "../../components/resources/ArticleNavigation";
@@ -74,26 +74,13 @@ export default async function ArticlePage({ params }: PageProps) {
           <div className="industrial-grid absolute inset-0 opacity-40" />
           <div className="absolute inset-0 bg-gradient-to-b from-navy-950 via-navy-950/95 to-navy-900" />
           <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-            <Link
-              href="/resources"
-              className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-gold-400 transition-colors hover:text-gold-300"
-            >
-              <svg
-                className="h-4 w-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
-                />
-              </svg>
-              Back to Resources
-            </Link>
+            <InteriorPageNav
+              breadcrumbs={[
+                { label: "Home", href: "/" },
+                { label: "Resources", href: "/resources" },
+                { label: article.title },
+              ]}
+            />
 
             <div className="mx-auto max-w-3xl">
               <ArticleFeaturedImage

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import {
+  HOME_NAV_LINK,
   isDropdownActive,
   isNavActive,
   MAIN_NAV,
@@ -31,15 +32,19 @@ function ChevronDown({ className }: { className?: string }) {
 function DropdownPanel({
   items,
   onNavigate,
+  prependHome = false,
 }: {
   items: NavLink[];
   onNavigate?: () => void;
+  prependHome?: boolean;
 }) {
+  const panelItems = prependHome ? [HOME_NAV_LINK, ...items] : items;
+
   return (
     <div className="overflow-hidden rounded-sm border border-white/10 bg-navy-900 shadow-2xl shadow-black/40">
       <ul className="py-2">
-        {items.map((item) => (
-          <li key={item.href}>
+        {panelItems.map((item) => (
+          <li key={`${item.href}-${item.label}`}>
             <Link
               href={item.href}
               onClick={onNavigate}
@@ -164,7 +169,11 @@ function MobileNavSection({
 
       {isOpen && (
         <div id={panelId} role="region" aria-labelledby={`${panelId}-button`}>
-          <DropdownPanel items={item.items} onNavigate={onNavigate} />
+          <DropdownPanel
+            items={item.items}
+            onNavigate={onNavigate}
+            prependHome
+          />
         </div>
       )}
     </div>
@@ -212,13 +221,14 @@ export default function Header() {
       <div className="mx-auto flex max-w-[90rem] items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8 lg:py-4">
         <Link
           href="/"
-          className="group flex shrink-0 items-center gap-3"
+          aria-label="Go to homepage"
+          className="group flex shrink-0 cursor-pointer items-center gap-3 transition-opacity hover:opacity-90"
           onClick={closeMobile}
         >
-          <span className="flex h-9 w-9 items-center justify-center rounded-sm border border-gold-500/40 bg-navy-800 font-display text-sm font-bold tracking-wider text-gold-400 transition-colors group-hover:border-gold-500/60">
+          <span className="flex h-9 w-9 items-center justify-center rounded-sm border border-gold-500/40 bg-navy-800 font-display text-sm font-bold tracking-wider text-gold-400 transition-colors group-hover:border-gold-500/60 group-hover:text-gold-300">
             D1
           </span>
-          <span className="hidden text-sm font-medium tracking-wide text-white/90 sm:block">
+          <span className="hidden text-sm font-medium tracking-wide text-white/90 transition-colors group-hover:text-gold-400 sm:block">
             Frontline Leadership
           </span>
         </Link>
@@ -257,7 +267,19 @@ export default function Header() {
           aria-label="Main mobile"
         >
           <div className="flex flex-col gap-3">
-            {MAIN_NAV.map((item) => (
+            <Link
+              href="/"
+              onClick={closeMobile}
+              className={`block rounded-sm px-4 py-3 text-base font-semibold uppercase tracking-wider transition-colors ${
+                pathname === "/"
+                  ? "bg-gold-500/10 text-gold-400"
+                  : "text-white/80 hover:text-gold-400"
+              }`}
+              aria-current={pathname === "/" ? "page" : undefined}
+            >
+              Home
+            </Link>
+            {MAIN_NAV.filter((item) => item.label !== "Home").map((item) => (
               <MobileNavSection
                 key={item.label}
                 item={item}

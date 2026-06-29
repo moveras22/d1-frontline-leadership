@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Footer from "../components/Footer";
+import InteriorPageNav from "../components/InteriorPageNav";
 import { ORGANIZATION_PROGRAMS } from "@/lib/organizations";
 
 export const metadata: Metadata = {
@@ -17,6 +18,12 @@ export default function ForOrganizationsPage() {
           <div className="industrial-grid absolute inset-0 opacity-40" />
           <div className="absolute inset-0 bg-gradient-to-b from-navy-950 via-navy-950/95 to-navy-900" />
           <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+            <InteriorPageNav
+              breadcrumbs={[
+                { label: "Home", href: "/" },
+                { label: "For Organizations" },
+              ]}
+            />
             <div className="mx-auto max-w-4xl text-center">
               <p className="inline-flex items-center gap-2 rounded-full border border-gold-500/25 bg-gold-500/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">
                 For Organizations

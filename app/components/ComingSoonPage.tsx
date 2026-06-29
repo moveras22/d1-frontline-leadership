@@ -1,4 +1,5 @@
 import Link from "next/link";
+import BackToHomeLink from "./BackToHomeLink";
 import Footer from "./Footer";
 
 type ComingSoonPageProps = {
@@ -19,26 +20,7 @@ export default function ComingSoonPage({
           <div className="industrial-grid absolute inset-0 opacity-40" />
           <div className="absolute inset-0 bg-gradient-to-b from-navy-950 via-navy-950/95 to-navy-900" />
           <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-            <Link
-              href="/"
-              className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-gold-400 transition-colors hover:text-gold-300"
-            >
-              <svg
-                className="h-4 w-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
-                />
-              </svg>
-              Back to Home
-            </Link>
+            <BackToHomeLink />
 
             <div className="mx-auto max-w-3xl text-center">
               <p className="inline-flex items-center gap-2 rounded-full border border-gold-500/25 bg-gold-500/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">
